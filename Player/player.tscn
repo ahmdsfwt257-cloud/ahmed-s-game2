@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0x18s70vbkvh"]
+[gd_scene load_steps=20 format=3 uid="uid://c0x18s70vbkvh"]
 
 [ext_resource type="Script" uid="uid://b6iv5gpjcd1k1" path="res://Player/scripts/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://cbynnuwhefrgb" path="res://Player/Sprites/PlayerSprite02 (1).png" id="2_k53q1"]
 [ext_resource type="Script" uid="uid://dx7ijjpeuokpc" path="res://Player/scripts/player_state_machine.gd" id="3_btcbx"]
+[ext_resource type="Texture2D" uid="uid://ckhv7bxwhe7wj" path="res://Player/Sprites/AttackSprite01 (1).png" id="3_vtle1"]
 [ext_resource type="Script" uid="uid://c2uydgttxrjbq" path="res://Player/scripts/state_idle.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://dfp3epn2phcac" path="res://Player/scripts/state_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://ckarpwqt8m1mf" path="res://Player/scripts/state_attack.gd" id="6_fhl08"]
@@ -202,6 +203,10 @@ position = Vector2(0, -21)
 texture = ExtResource("2_k53q1")
 hframes = 16
 vframes = 3
+
+[node name="AttackEffectSprite" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("3_vtle1")
+hframes = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
