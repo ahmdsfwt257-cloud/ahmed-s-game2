@@ -726,13 +726,6 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_wyclx")
 
-[node name="HurtBox" parent="." instance=ExtResource("2_3of0s")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_j1ull")
-debug_color = Color(0.7740976, 0.4437866, 3.85046e-07, 0.41960785)
-
 [node name="HitBox" parent="." instance=ExtResource("3_j1ull")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
@@ -793,3 +786,10 @@ hframes = 6
 libraries = {
 &"": SubResource("AnimationLibrary_ts4pi")
 }
+
+[node name="HurtBox" parent="." instance=ExtResource("2_3of0s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_j1ull")
+debug_color = Color(0.7740976, 0.4437866, 3.85046e-07, 0.41960785)

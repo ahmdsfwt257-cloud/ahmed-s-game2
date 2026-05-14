@@ -1,6 +1,6 @@
 class_name State_Idle  extends State
 
-@onready var walk: State_walk = $"../walk"
+@onready var walk: State_walk = $"../Walk"
 @onready var attack: State_Attack = $"../Attack"
 
 
