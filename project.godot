@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Adventure time"
-run/main_scene="uid://b4fl8yi8fq02x"
+run/main_scene="uid://canwqowlrb26u"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 LevelManager="*res://00_Globals/global_level_manager.gd"
 PlayerHud="*res://GUI/player_hud/player_hud.tscn"
 PlayerManager="*res://00_Globals/glabal_player_manager.gd"
+SecneTransition="*res://GUI/secne_transition/secne_transition.tscn"
 
 [display]
 
