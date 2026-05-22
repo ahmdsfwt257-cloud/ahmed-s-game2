@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://canwqowlrb26u"]
+[gd_scene load_steps=6 format=3 uid="uid://canwqowlrb26u"]
 
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_22ele"]
 [ext_resource type="PackedScene" uid="uid://nk7aenuy5tol" path="res://Tile Maps/grass-01.tscn" id="1_vbl6q"]
 [ext_resource type="PackedScene" uid="uid://cpim3e2fjgxxb" path="res://Levels/player_spawn.tscn" id="2_chooo"]
 [ext_resource type="PackedScene" uid="uid://6c0u4322u5i5" path="res://Levels/level_transition.tscn" id="4_4t7i1"]
-[ext_resource type="Resource" uid="uid://usrcketbj74q" path="res://Items/potion.tres" id="6_8itkk"]
-[ext_resource type="Resource" uid="uid://s0jf8diicaqg" path="res://Items/gem.tres" id="7_th3kk"]
-[ext_resource type="Resource" uid="uid://dfnysqvxs1s8" path="res://Items/stone.tres" id="7_xhij5"]
-[ext_resource type="PackedScene" uid="uid://dxjck51gsetno" path="res://interactables/TreasureCheast/treasure-chest.tscn" id="10_f2d14"]
+[ext_resource type="PackedScene" uid="uid://nsvcxvfdfhfq" path="res://Enemies/goblin/goblin.tscn" id="5_pwydo"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_22ele")
@@ -24,16 +21,5 @@ level = "uid://qn3qcjl3ax0o"
 size = 3
 side = 2
 
-[node name="TreasureChest" parent="." instance=ExtResource("10_f2d14")]
-position = Vector2(387, 147)
-item_data = ExtResource("6_8itkk")
-
-[node name="TreasureChest2" parent="." instance=ExtResource("10_f2d14")]
-position = Vector2(270, 147)
-item_data = ExtResource("7_th3kk")
-quantity = 10
-
-[node name="TreasureChest3" parent="." instance=ExtResource("10_f2d14")]
-position = Vector2(148, 147)
-item_data = ExtResource("7_xhij5")
-quantity = 50
+[node name="Slime" parent="." instance=ExtResource("5_pwydo")]
+position = Vector2(265, 205)
