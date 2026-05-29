@@ -20,7 +20,20 @@ func _ready() -> void:
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process( delta: float ) -> void:
+	if state == State.THROW:
+		speed -= acceleration * delta
+		position += direction * speed * delta
+		if speed <= 0:
+			state = State.RETURN
+		pass
+	elif state == State.RETURN:
+		direction = global_position.direction_to( player.global_position )
+		speed += acceleration * delta
+		position += direction * speed * delta
+		if global_position.distance_to( player.global_position ) <= 10:
+			queue_free()
+		pass
 	pass
 
 
