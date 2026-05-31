@@ -1,7 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://c0x18s70vbkvh"]
+[gd_scene load_steps=51 format=3 uid="uid://c0x18s70vbkvh"]
 
 [ext_resource type="Script" uid="uid://b6iv5gpjcd1k1" path="res://Player/scripts/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://cbynnuwhefrgb" path="res://Player/Sprites/PlayerSprite02 (1).png" id="2_k53q1"]
+[ext_resource type="Texture2D" path="res://Player/Sprites/player_sprite.png" id="2_b1ygp"]
 [ext_resource type="Texture2D" uid="uid://dqhf0c3woq86v" path="res://Player/Sprites/Shadow (1).png" id="3_00tjw"]
 [ext_resource type="Script" uid="uid://dx7ijjpeuokpc" path="res://Player/scripts/player_state_machine.gd" id="3_btcbx"]
 [ext_resource type="Texture2D" uid="uid://ckhv7bxwhe7wj" path="res://Player/Sprites/AttackSprite01 (1).png" id="3_vtle1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://djrm2g71lsjgp" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_x3vf3"]
 [ext_resource type="Script" uid="uid://nsmiu4b4hnv0" path="res://Player/scripts/PlayerCamera.gd" id="11_5htga"]
 [ext_resource type="Script" uid="uid://dy58k8llhs37g" path="res://Player/scripts/state_stun.gd" id="11_dkpta"]
+[ext_resource type="Script" uid="uid://6k6i0u2l5qye" path="res://Enemies/Scripts/states/state_death.gd" id="12_o28un"]
 [ext_resource type="PackedScene" uid="uid://qd7b1lyh7wxm" path="res://GeneralNodes/HitBox/hit_box.tscn" id="13_p5o4e"]
 [ext_resource type="Script" uid="uid://b6odehxnhwl7c" path="res://Player/scripts/push_area.gd" id="14_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btnhwi8e2ejv8" path="res://Player/Audio/hit_player_2.wav" id="15_lfmf2"]
@@ -530,12 +531,30 @@ tracks/0/keys = {
 "values": [13, 16]
 }
 
+[sub_resource type="Animation" id="Animation_gpjlu"]
+resource_name = "death"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [74, 75, 76]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00tjw"]
 _data = {
 &"RESET": SubResource("Animation_btcbx"),
 &"attack_down": SubResource("Animation_00tjw"),
 &"attack_side": SubResource("Animation_apopc"),
 &"attack_up": SubResource("Animation_x3vf3"),
+&"death": SubResource("Animation_gpjlu"),
 &"idle_down": SubResource("Animation_4ntmi"),
 &"idle_side": SubResource("Animation_k53q1"),
 &"idle_up": SubResource("Animation_gwnis"),
@@ -638,9 +657,9 @@ shape = SubResource("CircleShape2D_edjgo")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(0, -21)
-texture = ExtResource("2_k53q1")
+texture = ExtResource("2_b1ygp")
 hframes = 16
-vframes = 3
+vframes = 8
 
 [node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0, 0, 0, 0.75686276)
@@ -690,6 +709,9 @@ attack_sound = ExtResource("8_od3ui")
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("11_dkpta")
 
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("12_o28un")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 editor_draw_limits = true
 script = ExtResource("11_5htga")
@@ -697,7 +719,7 @@ script = ExtResource("11_5htga")
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
-max_polyphony = 4
+max_polyphony = 8
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("10_apopc")
