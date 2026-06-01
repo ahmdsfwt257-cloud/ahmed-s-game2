@@ -11,18 +11,18 @@ func init() -> void:
 
 
 ## what happens when the player enters this state?
-func enter() -> void:
-	player.animation_player.play(" death ")
+func Enter() -> void:
+	player.animation_player.play("death")
 	audio.stream = exhaust_audio
 	audio.play()
-	#trigger game over ui
-	#AudioManager.play_music()
+	PlayerHud.show_game_over_screen()
+	AudioManager.play_music( null )
 	pass
 
 
 
 ## what happens when the player exits this state?
-func exit() -> void:
+func Exit() -> void:
 	pass
 
 

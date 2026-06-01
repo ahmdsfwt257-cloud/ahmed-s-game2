@@ -46,6 +46,12 @@ func _physics_process( _delta ):
 
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	pass
+
+
+
+
 func setDirection() -> bool:
 	if direction == Vector2.ZERO:
 		return false
@@ -81,12 +87,10 @@ func AnimDirection() -> String:
 func _take_damage( hurt_box : HurtBox ) -> void:
 	if invulnerable == true:
 		return
-	update_hp( -hurt_box.damage )
 	if hp > 0:
+		update_hp( -hurt_box.damage )
 		player_damaged.emit( hurt_box )
-	else:
-		player_damaged.emit( hurt_box )
-		update_hp( 99 )
+		
 	pass
 
 
@@ -105,3 +109,10 @@ func make_invulnerable( _duration : float = 1.0 ) -> void:
 	invulnerable = false
 	hit_box.monitoring = true
 	pass
+
+
+
+
+func revive_player() -> void:
+	update_hp(99)
+	state_machine.changestate( $StateMachine/Idle )

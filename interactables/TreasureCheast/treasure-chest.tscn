@@ -200,6 +200,7 @@ size = Vector2(36, 18)
 
 [node name="TreasureChest" type="Node2D"]
 process_mode = 3
+z_index = 1
 script = ExtResource("1_udt1y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

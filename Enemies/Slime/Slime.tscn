@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://brl3bdhkbtmkj"]
+[gd_scene load_steps=40 format=3 uid="uid://brl3bdhkbtmkj"]
 
 [ext_resource type="Texture2D" uid="uid://dqhf0c3woq86v" path="res://Player/Sprites/Shadow (1).png" id="1_0ae7n"]
 [ext_resource type="Texture2D" uid="uid://cdx64ydwl7mih" path="res://Enemies/Slime/Slime (1).png" id="1_hsbk2"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://f12ojv2igy5y" path="res://Enemies/Scripts/drop_data.gd" id="13_mp7rs"]
 [ext_resource type="Resource" uid="uid://s0jf8diicaqg" path="res://Items/gem.tres" id="14_ke740"]
 [ext_resource type="Resource" uid="uid://b5fmi6kp1vk5u" path="res://Items/apple.tres" id="15_ke740"]
+[ext_resource type="Resource" uid="uid://usrcketbj74q" path="res://Items/potion.tres" id="16_ts4pi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1ull"]
 radius = 13.0
@@ -761,13 +762,20 @@ _data = {
 [sub_resource type="Resource" id="Resource_ts4pi"]
 script = ExtResource("13_mp7rs")
 item = ExtResource("14_ke740")
-max_amount = 4
+probability = 33.0
+max_amount = 3
 metadata/_custom_type_script = "uid://f12ojv2igy5y"
 
 [sub_resource type="Resource" id="Resource_2vvwu"]
 script = ExtResource("13_mp7rs")
 item = ExtResource("15_ke740")
 probability = 33.0
+metadata/_custom_type_script = "uid://f12ojv2igy5y"
+
+[sub_resource type="Resource" id="Resource_gorp7"]
+script = ExtResource("13_mp7rs")
+item = ExtResource("16_ts4pi")
+probability = 5.0
 metadata/_custom_type_script = "uid://f12ojv2igy5y"
 
 [sub_resource type="Animation" id="Animation_3of0s"]
@@ -890,7 +898,7 @@ next_state = NodePath("../idle")
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_36jae")
 decelerate_speed = 5.0
-drops = Array[ExtResource("13_mp7rs")]([SubResource("Resource_ts4pi"), SubResource("Resource_2vvwu")])
+drops = Array[ExtResource("13_mp7rs")]([SubResource("Resource_ts4pi"), SubResource("Resource_2vvwu"), SubResource("Resource_gorp7")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
