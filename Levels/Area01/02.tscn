@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qn3qcjl3ax0o"]
+[gd_scene load_steps=8 format=3 uid="uid://qn3qcjl3ax0o"]
 
 [ext_resource type="PackedScene" uid="uid://nk7aenuy5tol" path="res://Tile Maps/grass-01.tscn" id="1_5fko6"]
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_m5oye"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bl5wb0rqvuyi3" path="res://Levels/music/example_music_01.ogg" id="2_wi5as"]
 [ext_resource type="PackedScene" uid="uid://6c0u4322u5i5" path="res://Levels/level_transition.tscn" id="4_oehwa"]
 [ext_resource type="PackedScene" uid="uid://nsvcxvfdfhfq" path="res://Enemies/goblin/goblin.tscn" id="5_mwxiv"]
+[ext_resource type="PackedScene" uid="uid://d3qlq3pebkcu7" path="res://npc/patrol_location.tscn" id="7_icgqb"]
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_m5oye")
@@ -42,6 +43,12 @@ side = 2
 
 [node name="Goplin" parent="enemies" instance=ExtResource("5_mwxiv")]
 position = Vector2(186, 13)
+
+[node name="PatrolLocation" parent="enemies/Goplin" instance=ExtResource("7_icgqb")]
+position = Vector2(-53, 1)
+
+[node name="PatrolLocation2" parent="enemies/Goplin" instance=ExtResource("7_icgqb")]
+position = Vector2(-59, 44)
 
 [node name="Goplin2" parent="enemies" instance=ExtResource("5_mwxiv")]
 position = Vector2(401, 13)
