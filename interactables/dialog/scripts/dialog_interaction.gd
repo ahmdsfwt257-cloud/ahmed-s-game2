@@ -29,7 +29,10 @@ func _ready() -> void:
 
 func player_interact() -> void:
 	player_interacted.emit()
-	DialogSystem.show_dialog()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	DialogSystem.show_dialog( dialog_items )
+	DialogSystem.finished.connect( _on_dialog_finished )
 	pass
 
 
@@ -46,6 +49,11 @@ func _on_area_exit( _a : Area2D ) -> void:
 	PlayerManager.interact_pressed.disconnect( player_interact )
 	pass
 
+
+
+func _on_dialog_finished() -> void:
+	DialogSystem.finished.disconnect( _on_dialog_finished )
+	finished.emit()
 
 
 func _get_configuration_warnings() -> PackedStringArray:

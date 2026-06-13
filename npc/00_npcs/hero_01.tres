@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_kyg6l")
-npc_name = "hero"
+npc_name = "Hero"
 portrait = ExtResource("1_47113")
