@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg6pexe1fytqb"]
+[gd_scene load_steps=18 format=3 uid="uid://bg6pexe1fytqb"]
 
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_t51ec"]
 [ext_resource type="AudioStream" uid="uid://bl5wb0rqvuyi3" path="res://Levels/music/example_music_01.ogg" id="2_jvg0d"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://d3qlq3pebkcu7" path="res://npc/patrol_location.tscn" id="11_v72oj"]
 [ext_resource type="Resource" uid="uid://i5ghrbhci3jj" path="res://npc/00_npcs/00_hero.tres" id="12_55lxj"]
 [ext_resource type="Resource" uid="uid://fvxap5wd026m" path="res://npc/00_npcs/npc_02.tres" id="13_n7k4n"]
+[ext_resource type="Script" uid="uid://bdi8bnthvpfy5" path="res://interactables/dialog/scripts/dialog_choice.gd" id="16_a033e"]
+[ext_resource type="Script" uid="uid://bvrnk7am5wsx4" path="res://interactables/dialog/scripts/dialog_branch.gd" id="17_2v1i7"]
 
 [node name="03" type="Node2D"]
 script = ExtResource("1_t51ec")
@@ -112,5 +114,34 @@ wait_time = 1.0
 
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
 script = ExtResource("11_q54cq")
-text = "Hi! How's Hero?"
+text = "Yo! Hero! Will you help me retrieve my magical flute from the dark dungeon?"
+metadata/_custom_type_script = "uid://dpayt7gktjt8s"
+
+[node name="DialogChoice" type="Node" parent="NPC2/DialogInteraction"]
+script = ExtResource("16_a033e")
+metadata/_custom_type_script = "uid://bdi8bnthvpfy5"
+
+[node name="DialogBranch" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_2v1i7")
+text = "Count on ot!"
+metadata/_custom_type_script = "uid://bvrnk7am5wsx4"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_q54cq")
+text = "Thank you dear hero! You are a true specimen!"
+metadata/_custom_type_script = "uid://dpayt7gktjt8s"
+
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("11_q54cq")
+text = "Oh, and be careful of the evil wizard who lurks in the dungeon!"
+metadata/_custom_type_script = "uid://dpayt7gktjt8s"
+
+[node name="DialogBranch2" type="Node" parent="NPC2/DialogInteraction/DialogChoice"]
+script = ExtResource("17_2v1i7")
+text = "NO!"
+metadata/_custom_type_script = "uid://bvrnk7am5wsx4"
+
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("11_q54cq")
+text = "Geez! Some lousy hero you are..."
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"

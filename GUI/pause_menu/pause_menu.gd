@@ -16,13 +16,14 @@ func _ready() -> void:
 	hide_pause_menu()
 	button_save.pressed.connect( _on_save_pressed )
 	button_load.pressed.connect( _on_load_pressed )
-	pass # Replace with function body.
 
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		if is_paused == false:
+			if DialogSystem.is_active:
+				return
 			show_pause_menu()
 		else:
 			hide_pause_menu()
