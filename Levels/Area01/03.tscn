@@ -153,4 +153,5 @@ metadata/_custom_type_script = "uid://bvrnk7am5wsx4"
 [node name="DialogText" type="Node" parent="NPC2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("11_q54cq")
 text = "Geez! Some lousy hero you are..."
+npc_info = ExtResource("13_n7k4n")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"

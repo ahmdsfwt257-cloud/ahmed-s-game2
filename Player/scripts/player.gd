@@ -69,7 +69,7 @@ func setDirection() -> bool:
 
 
 
-func UpdateAnimation(state: String) -> void:
+func update_animation(state: String) -> void:
 	animation_player.play(state + "_" + AnimDirection() )
 	pass
 
@@ -115,4 +115,4 @@ func make_invulnerable( _duration : float = 1.0 ) -> void:
 
 func revive_player() -> void:
 	update_hp(99)
-	state_machine.changestate( $StateMachine/Idle ) 
+	state_machine.change_state( $StateMachine/Idle ) 

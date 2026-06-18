@@ -1,12 +1,14 @@
-class_name State_Idle  extends State
+class_name State_walk  extends State
 
-@onready var walk: State_walk = $"../Walk"
+@export var move_speed : float = 100.0
+
+@onready var idle: State_Idle = $"../Idle"
 @onready var attack: State_Attack = $"../Attack"
 
-
+ 
 ## what happens when the player enters this state?
 func Enter() -> void:
-	player.UpdateAnimation("idle")
+	player.update_animation("walk")
 	pass
 
 
@@ -15,12 +17,15 @@ func Exit() -> void:
 	pass
 
 
-
 ##what happens during the _process update in this state?
 func process(_delta: float) -> State:
-	if player.direction != Vector2.ZERO:
-		return walk
-	player.velocity = Vector2.ZERO
+	if player.direction == Vector2.ZERO:
+		return idle
+	
+	player.velocity = player.direction * move_speed
+	
+	if player.setDirection():
+		player.update_animation("walk")
 	return null
 
 

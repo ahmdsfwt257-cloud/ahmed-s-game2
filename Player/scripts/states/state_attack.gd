@@ -9,15 +9,16 @@ var attacking : bool = false
 @onready var attack_anim: AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 
-@onready var idle: State_Idle = $"../Idle"
-@onready var walk: State_walk = $"../Walk"
+@onready var idle: State = $"../Idle"
+@onready var walk: State = $"../Walk"
+@onready var charge_attack: State = $"../ChargeAttack"
 @onready var hurt_box: HurtBox = %AttackHurtBox
 
 
 
 ## what happens when the player enters this state?
 func Enter() -> void:
-	player.UpdateAnimation("attack")
+	player.update_animation("attack")
 	attack_anim.play("attack_" + player.AnimDirection())
 	animation_player.animation_finished.connect(EndAttack)
 	
@@ -65,4 +66,6 @@ func Handleinput(_event: InputEvent) -> State:
 
 
 func EndAttack(_newAnimName : String) -> void:
+	if Input.is_action_pressed("attack"):
+		state_machine.change_state( charge_attack )
 	attacking = false
