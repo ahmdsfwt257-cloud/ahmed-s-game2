@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca3hgmxbt68if"]
+[gd_scene load_steps=11 format=3 uid="uid://ca3hgmxbt68if"]
 
 [ext_resource type="Script" uid="uid://be7jippa8irl1" path="res://Props/Plants/plant.gd" id="1_akllp"]
-[ext_resource type="Texture2D" uid="uid://dk0bdh61elciw" path="res://Props/Sprites/Props (2).png" id="2_w3sfv"]
+[ext_resource type="Texture2D" uid="uid://chkep41413hwj" path="res://Props/Sprites/Props.png" id="2_akllp"]
 [ext_resource type="PackedScene" uid="uid://qd7b1lyh7wxm" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_oun8e"]
+[ext_resource type="PackedScene" uid="uid://doy3devrrglwa" path="res://interactables/Throwable/throwable.tscn" id="4_w3sfv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akllp"]
 size = Vector2(28, 28)
@@ -10,12 +11,53 @@ size = Vector2(28, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyft2"]
 size = Vector2(24, 16)
 
+[sub_resource type="Animation" id="Animation_w3sfv"]
+resource_name = "destroy"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_oun8e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyft2"]
+_data = {
+&"RESET": SubResource("Animation_oun8e"),
+&"destroy": SubResource("Animation_w3sfv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oun8e"]
+size = Vector2(38, 20)
+
 [node name="Plant" type="Node2D"]
 script = ExtResource("1_akllp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
-texture = ExtResource("2_w3sfv")
+texture = ExtResource("2_akllp")
 hframes = 16
 vframes = 3
 
@@ -35,3 +77,13 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_xyft2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xyft2")
+}
+
+[node name="Throwable" parent="." instance=ExtResource("4_w3sfv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Throwable"]
+shape = SubResource("RectangleShape2D_oun8e")

@@ -87,6 +87,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ShadowSprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.7646823, 0.31910288, 0.04275482, 0.81960785)]
+}
 
 [sub_resource type="Animation" id="Animation_ts4pi"]
 resource_name = "destroy_down"
@@ -190,6 +202,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ShadowSprite2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.7646823, 0.31910288, 0.04275482, 0.81960785), Color(0.76487833, 0.3189972, 0.03876, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gorp7"]
@@ -295,6 +319,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ShadowSprite2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.7646823, 0.31910288, 0.04275482, 0.81960785), Color(0.76487833, 0.3189972, 0.03876, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_2vvwu"]
 resource_name = "destroy_up"
@@ -398,6 +434,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ShadowSprite2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.7646823, 0.31910288, 0.04275482, 0.81960785), Color(0.76487833, 0.3189972, 0.03876, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0ae7n"]

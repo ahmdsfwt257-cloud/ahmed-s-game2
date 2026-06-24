@@ -5,6 +5,7 @@ const  PICKUP = preload( "res://Items/item_pickup/item_pickup.tscn" )
 @export var anim_name : String = "destroy"
 @export var knockback_speed : float = 200.0
 @export var decelerate_speed : float = 10.0
+@export var effect_animation_player : AnimationPlayer
 
 @export_category("AI")
 
@@ -31,6 +32,8 @@ func enter() -> void:
 	enemy.velocity = _direction * -knockback_speed
 	enemy.update_animation( anim_name )
 	enemy.animation_player.animation_finished.connect( _on_animation_finished )
+	if effect_animation_player:
+		effect_animation_player.play( "destroy" )
 	disable_hurt_box()
 	drop_items()
 	pass

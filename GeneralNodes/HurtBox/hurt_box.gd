@@ -1,5 +1,7 @@
 class_name HurtBox extends Area2D
 
+signal  did_damaged
+
 @export var damage : int = 1
 
 
@@ -16,5 +18,6 @@ func _process( _delta ):
 
 func AreaEntered( a : Area2D ) -> void:
 	if a is HitBox:
+		did_damaged.emit()
 		a.TakeDamage( self )
 	pass

@@ -44,8 +44,8 @@ func Enter() -> void:
 
 ## what happens when the player exits this state?
 func Exit() -> void:
-	charge_hurt_box.monitorable = false
-	charge_spin_hurt_box.monitoring = false
+	charge_hurt_box.set_deferred("monitorable", false)
+	charge_spin_hurt_box.set_deferred("monitoring", false)
 	spin_effects_sprite_2d.visible = false
 	gpu_particles_2d.emitting = false
 	pass

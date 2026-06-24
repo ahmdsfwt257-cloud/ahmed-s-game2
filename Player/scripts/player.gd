@@ -19,6 +19,9 @@ var max_hp : int = 6
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
+@onready var lift: State_Lift = $StateMachine/Lift
+@onready var held_item: Node2D = $Sprite2D/HeldItem
+@onready var carry: State_Carry = $StateMachine/Carry
 
 
 
@@ -43,12 +46,6 @@ func _process( _delta ):
 
 func _physics_process( _delta ):
 	move_and_slide()
-
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	pass
-
 
 
 
@@ -90,7 +87,9 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	if hp > 0:
 		update_hp( -hurt_box.damage )
 		player_damaged.emit( hurt_box )
-		
+	else:
+		player_damaged.emit( hurt_box )
+		update_hp(99)
 	pass
 
 
@@ -110,9 +109,13 @@ func make_invulnerable( _duration : float = 1.0 ) -> void:
 	hit_box.monitoring = true
 	pass
 
-
-
-
 func revive_player() -> void:
 	update_hp(99)
-	state_machine.change_state( $StateMachine/Idle ) 
+	state_machine.change_state( $StateMachine/Idle )
+
+
+
+func pickup_item( _t : Throwable ) -> void:
+	state_machine.change_state( lift )
+	carry.throwable = _t
+	pass

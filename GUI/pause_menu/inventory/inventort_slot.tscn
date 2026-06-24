@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c38y5bqjgii0l"]
+[gd_scene load_steps=5 format=3 uid="uid://c38y5bqjgii0l"]
 
 [ext_resource type="Texture2D" uid="uid://c85sfo8j50hbt" path="res://Items/sprites/items (1).png" id="1_8ssao"]
 [ext_resource type="Script" uid="uid://b64ipi15ulkwf" path="res://GUI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="1_meu6s"]
+[ext_resource type="FontFile" uid="uid://d1mfhsln8m1ik" path="res://GUI/fonts/Abaddon Bold.ttf" id="3_7ydc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_meu6s"]
 atlas = ExtResource("1_8ssao")
@@ -24,6 +25,7 @@ stretch_mode = 3
 layout_mode = 0
 offset_right = 31.0
 offset_bottom = 23.0
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("3_7ydc7")
+theme_override_font_sizes/font_size = 16
 text = "99"
 horizontal_alignment = 2
