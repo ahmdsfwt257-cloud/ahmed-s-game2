@@ -49,6 +49,13 @@ func _physics_process( _delta ):
 
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("test"):
+		#PlayerManager.shake_camera()
+	pass
+
+
+
 func setDirection() -> bool:
 	if direction == Vector2.ZERO:
 		return false

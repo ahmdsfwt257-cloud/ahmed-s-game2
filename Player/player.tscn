@@ -1593,6 +1593,7 @@ throw_audio = ExtResource("22_efx54")
 [node name="Camera2D" type="Camera2D" parent="."]
 editor_draw_limits = true
 script = ExtResource("11_5htga")
+shake_decay = 2.0
 
 [node name="Audio" type="Node2D" parent="."]
 
