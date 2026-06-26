@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqhne7a0q1e7f"]
+[gd_scene load_steps=15 format=3 uid="uid://cqhne7a0q1e7f"]
 
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_3jn7v"]
 [ext_resource type="AudioStream" uid="uid://drg7ek5ckeavx" path="res://Levels/music/example_music_03.ogg" id="2_kwhp8"]
@@ -7,6 +7,28 @@
 [ext_resource type="PackedScene" uid="uid://cpim3e2fjgxxb" path="res://Levels/player_spawn.tscn" id="4_bbxeb"]
 [ext_resource type="PackedScene" uid="uid://b803d63ssjva1" path="res://interactables/dungeon/locked_door.tscn" id="5_2wffi"]
 [ext_resource type="PackedScene" uid="uid://nsvcxvfdfhfq" path="res://Enemies/goblin/goblin.tscn" id="7_3jn7v"]
+[ext_resource type="PackedScene" uid="uid://0g7hxyqxtr34" path="res://Props/pot/Pot.tscn" id="8_m2303"]
+[ext_resource type="Script" uid="uid://f12ojv2igy5y" path="res://Enemies/Scripts/drop_data.gd" id="9_os54b"]
+[ext_resource type="Resource" uid="uid://dfnysqvxs1s8" path="res://Items/stone.tres" id="10_6xrvw"]
+[ext_resource type="Resource" uid="uid://b5fmi6kp1vk5u" path="res://Items/apple.tres" id="11_labp1"]
+
+[sub_resource type="Resource" id="Resource_f8v6h"]
+script = ExtResource("9_os54b")
+item = ExtResource("10_6xrvw")
+max_amount = 3
+metadata/_custom_type_script = "uid://f12ojv2igy5y"
+
+[sub_resource type="Resource" id="Resource_yoqvq"]
+script = ExtResource("9_os54b")
+item = ExtResource("11_labp1")
+probability = 75.0
+max_amount = 3
+metadata/_custom_type_script = "uid://f12ojv2igy5y"
+
+[sub_resource type="Resource" id="Resource_ujmc8"]
+script = ExtResource("9_os54b")
+item = ExtResource("11_labp1")
+metadata/_custom_type_script = "uid://f12ojv2igy5y"
 
 [node name="02" type="Node2D"]
 script = ExtResource("1_3jn7v")
@@ -46,3 +68,20 @@ position = Vector2(203, 0)
 
 [node name="Goplin2" parent="." instance=ExtResource("7_3jn7v")]
 position = Vector2(381, -5)
+
+[node name="props" type="Node" parent="."]
+
+[node name="Pot" parent="props" instance=ExtResource("8_m2303")]
+position = Vector2(144, 50)
+drops = Array[ExtResource("9_os54b")]([SubResource("Resource_f8v6h")])
+
+[node name="Pot2" parent="props" instance=ExtResource("8_m2303")]
+position = Vector2(144, 81)
+
+[node name="Pot3" parent="props" instance=ExtResource("8_m2303")]
+position = Vector2(142, 112)
+drops = Array[ExtResource("9_os54b")]([SubResource("Resource_yoqvq")])
+
+[node name="Pot4" parent="props" instance=ExtResource("8_m2303")]
+position = Vector2(144, 144)
+drops = Array[ExtResource("9_os54b")]([SubResource("Resource_ujmc8")])

@@ -12,6 +12,7 @@ var object_sprite : Sprite2D
 var vertical_velocity : float = 0
 var grounf_height : float = 0
 var animation_player : AnimationPlayer
+var is_destroyed : bool = false
 
 @onready var hurt_box: HurtBox = $HurtBox
 
@@ -81,7 +82,13 @@ func drop() -> void:
 
 
 func destroy() -> void:
+	if is_destroyed:
+		return
+	is_destroyed = true
 	set_physics_process( false )
+	if hurt_box:
+		hurt_box.set_deferred("monitoring", false)
+		hurt_box.did_damaged.disconnect( destroy )
 	if animation_player:
 		animation_player.play( "destroy" )
 		await animation_player.animation_finished

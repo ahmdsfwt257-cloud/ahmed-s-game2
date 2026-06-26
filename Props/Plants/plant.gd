@@ -1,5 +1,6 @@
 class_name Plant extends Node2D
 
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_box: HitBox = $HitBox
 

@@ -817,7 +817,7 @@ metadata/_custom_type_script = "uid://f12ojv2igy5y"
 [sub_resource type="Resource" id="Resource_2vvwu"]
 script = ExtResource("13_mp7rs")
 item = ExtResource("15_ke740")
-probability = 33.0
+probability = 25.0
 metadata/_custom_type_script = "uid://f12ojv2igy5y"
 
 [sub_resource type="Resource" id="Resource_gorp7"]

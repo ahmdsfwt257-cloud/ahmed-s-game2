@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://0g7hxyqxtr34"]
+[gd_scene load_steps=13 format=3 uid="uid://0g7hxyqxtr34"]
 
+[ext_resource type="Script" uid="uid://bcx748qw47vs7" path="res://Props/pot/pot.gd" id="1_pot"]
 [ext_resource type="Texture2D" uid="uid://chkep41413hwj" path="res://Props/Sprites/Props.png" id="1_v5x4x"]
 [ext_resource type="AudioStream" uid="uid://bl54bv84o7y0i" path="res://Props/pot/pot_destroy.wav" id="2_0vehh"]
 [ext_resource type="PackedScene" uid="uid://doy3devrrglwa" path="res://interactables/Throwable/throwable.tscn" id="3_3q0u8"]
@@ -116,6 +117,7 @@ size = Vector2(20, 13)
 size = Vector2(16, 8)
 
 [node name="Pot" type="Node2D"]
+script = ExtResource("1_pot")
 
 [node name="Sprite2D_shadow" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_3q0u8")
