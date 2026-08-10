@@ -1467,7 +1467,7 @@ visibility_layer = 17
 shape = SubResource("CircleShape2D_edjgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446766592]
-z_index = 1
+z_index = 2
 position = Vector2(0, -21)
 texture = ExtResource("2_b1ygp")
 hframes = 16

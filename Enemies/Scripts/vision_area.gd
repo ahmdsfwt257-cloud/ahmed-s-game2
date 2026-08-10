@@ -36,7 +36,7 @@ func _on_diretion_change( new_diewction : Vector2 ) -> void:
 		Vector2.LEFT:
 			rotation_degrees = 90
 		Vector2.RIGHT:
-			rotation_degrees = 90
+			rotation_degrees = -90
 		_:
 			rotation_degrees = 0
 	pass

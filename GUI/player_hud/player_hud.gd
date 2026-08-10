@@ -7,12 +7,15 @@ const TITLE_SCENE = "res://title_scene/title_scene.tscn"
 
 var hearts : Array[ HeartGUI ] = []
 
-
 @onready var game_over : Control = $Control/GameOver
 @onready var continue_button: Button = $Control/GameOver/VBoxContainer/ContinueButton
 @onready var title_button: Button = $Control/GameOver/VBoxContainer/TitleButton
 @onready var animation_player: AnimationPlayer = $Control/GameOver/AnimationPlayer
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+
+@onready var boss_ui: Control = $Control/BossUI
+@onready var boss_hp_bar: TextureProgressBar = $Control/BossUI/TextureProgressBar
+@onready var boss_label: Label = $Control/BossUI/Label
 
 
 
@@ -29,6 +32,9 @@ func _ready() -> void:
 	title_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
 	title_button.pressed.connect( title_screen )
 	LevelManager.level_load_started.connect( hide_game_over_screen )
+	
+	hide_boss_health()
+	
 	pass 
 
 
@@ -98,9 +104,6 @@ func title_screen() -> void:
 	LevelManager.load_new_level( TITLE_SCENE, "", Vector2.ZERO )
 
 
-
-
-
 func fade_to_black() -> bool:
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
@@ -112,3 +115,20 @@ func fade_to_black() -> bool:
 func play_audio( _a : AudioStream ) -> void:
 	audio.stream = _a
 	audio.play()
+
+
+func show_boss_health( boss_name : String ) -> void:
+	boss_ui.visible = true
+	boss_label.text = boss_name
+	update_boss_health( 1, 1 )
+	pass
+
+
+func hide_boss_health() -> void:
+	boss_ui.visible = false
+	pass
+
+
+func update_boss_health( hp : int, max_hp : int ) -> void:
+	boss_hp_bar.value = clampf( float(hp) / float(max_hp) * 100, 0, 100 )
+	pass

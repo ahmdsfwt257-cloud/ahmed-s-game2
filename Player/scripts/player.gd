@@ -94,9 +94,6 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	if hp > 0:
 		update_hp( -hurt_box.damage )
 		player_damaged.emit( hurt_box )
-	else:
-		player_damaged.emit( hurt_box )
-		update_hp(99)
 	pass
 
 

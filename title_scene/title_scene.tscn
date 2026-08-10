@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqxm6m848y3ak"]
+[gd_scene format=3 uid="uid://bqxm6m848y3ak"]
 
 [ext_resource type="Script" uid="uid://bi0cdvbecrgfw" path="res://title_scene/title_scene.gd" id="1_0q24l"]
-[ext_resource type="PackedScene" uid="uid://6f0attqigr24" path="res://Tile Maps/Sprites/dungeon.tscn" id="1_5xqkb"]
+[ext_resource type="PackedScene" uid="uid://6f0attqigr24" path="res://Tile Maps/dungeon.tscn" id="1_5xqkb"]
 [ext_resource type="Texture2D" uid="uid://clk8g8upc324x" path="res://Tile Maps/Sprites/dungeon (1).png" id="2_i4gmv"]
 [ext_resource type="AudioStream" uid="uid://ci6nwus7jybvq" path="res://title_scene/audio/waves.mp3" id="2_lj5tl"]
 [ext_resource type="PackedScene" uid="uid://c3cqmldupwrj" path="res://interactables/dungeon/pushable_statue.tscn" id="3_0q24l"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://4yi5rjv1jm5j"]
+[gd_scene format=4 uid="uid://4yi5rjv1jm5j"]
 
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_xwwkm"]
 [ext_resource type="AudioStream" uid="uid://bl5wb0rqvuyi3" path="res://Levels/music/example_music_01.ogg" id="2_xtrse"]
-[ext_resource type="PackedScene" uid="uid://nk7aenuy5tol" path="res://Tile Maps/grass-01.tscn" id="3_6mwd2"]
+[ext_resource type="PackedScene" uid="uid://cxt7h7bgoxaw" path="res://Tile Maps/grass-tiles-01.tscn" id="3_bn2m3"]
 [ext_resource type="PackedScene" uid="uid://cpim3e2fjgxxb" path="res://Levels/player_spawn.tscn" id="4_bg7ug"]
 [ext_resource type="PackedScene" uid="uid://6c0u4322u5i5" path="res://Levels/level_transition.tscn" id="5_o0hyy"]
 [ext_resource type="PackedScene" uid="uid://rrydaj1m72p3" path="res://npc/npc.tscn" id="6_fsuok"]
@@ -72,18 +72,17 @@ portrait = ExtResource("7_2q6y6")
 dialog_audio_pitch = 1.5
 metadata/_custom_type_script = "uid://n0fok6ki7uvg"
 
-[node name="05" type="Node2D"]
-position = Vector2(-6, 40)
+[node name="05" type="Node2D" unique_id=1461012006]
 script = ExtResource("1_xwwkm")
 music = ExtResource("2_xtrse")
 
-[node name="Grass01" parent="." instance=ExtResource("3_6mwd2")]
-layer_0/tile_data = PackedInt32Array(1, 262144, 0, 65537, 262144, 2, 2, 262144, 0, 65538, 262144, 1, 3, 131072, 3, 65539, 327680, 0, 4, 131072, 3, 65540, 458752, 0, 6, 131072, 3, 65542, 262144, 0, 7, 131072, 3, 65543, 131072, 3, 8, 131072, 3, 65544, 131072, 3, 9, 131072, 3, 65545, 131072, 3, 10, 262144, 0, 65546, 262144, 1, 11, 131072, 3, 65547, 131072, 3, 12, 262144, 3, 65548, 262144, 0, 13, 131072, 3, 65549, 131072, 3, 14, 262144, 0, 65550, 262144, 1, -131071, 786432, 6, -65535, 786432, 7, -131070, 851968, 6, -65534, 851968, 7, -131069, 720896, 6, -65533, 720896, 7, -131068, 786432, 6, -65532, 786432, 7, -131067, 851968, 6, -65531, 851968, 7, -131066, 196608, 4, -65530, 720896, 7, -131062, 196608, 4, -65526, 720896, 7, -131061, 851968, 6, -65525, 851968, 7, -131060, 720896, 6, -65524, 720896, 7, -131059, 786432, 6, -65523, 786432, 7, -131058, 851968, 6, -65522, 851968, 7, -131057, 720896, 6, -65521, 720896, 7, 15, 131072, 3, 65551, 131072, 3, -131056, 917504, 6, -65520, 917504, 7, 16, 131072, 3, 65552, 131072, 3, -65529, 720896, 7, -65528, 720896, 7, -131065, 196608, 4, -131064, 196608, 4, -131063, 196608, 4, -65527, 720896, 7, 327680, 131072, 3, 131073, 131072, 3, 196609, 327680, 3, 262145, 131072, 3, 327681, 131072, 3, 131074, 262144, 1, 196610, 458752, 2, 262146, 262144, 3, 327682, 262144, 0, 131075, 262144, 1, 196611, 327680, 2, 262147, 131072, 3, 327683, 327680, 3, 131076, 262144, 1, 196612, 458752, 2, 262148, 262144, 0, 131077, 262144, 1, 196613, 327680, 2, 262149, 131072, 3, 131078, 262144, 1, 196614, 393216, 2, 262150, 131072, 3, 131079, 131072, 3, 196615, 458752, 3, 262151, 262144, 0, 327687, 262144, 2, 131080, 131072, 3, 196616, 131072, 3, 262152, 262144, 0, 327688, 262144, 2, 131081, 327680, 0, 196617, 327680, 2, 262153, 262144, 0, 131082, 458752, 1, 196618, 458752, 2, 262154, 131072, 3, 131083, 131072, 3, 196619, 131072, 3, 262155, 131072, 3, 131084, 262144, 1, 196620, 262144, 2, 262156, 131072, 3, 327692, 131072, 3, 131085, 327680, 0, 196621, 327680, 2, 262157, 131072, 3, 327693, 131072, 3, 131086, 458752, 1, 196622, 458752, 2, 262158, 131072, 3, 327694, 131072, 3, 131087, 131072, 3, 196623, 131072, 3, 262159, 131072, 3, 327695, 131072, 3, 131088, 131072, 3, 196624, 131072, 3, 262160, 131072, 3, 327696, 131072, 3, -131055, 655360, 5, -65519, 655360, 5, 17, 655360, 5, 65553, 655360, 5, 131089, 655360, 5, 196625, 655360, 5, 262161, 655360, 5, 327697, 655360, 5, -131072, 655360, 6, -65536, 655360, 7, 0, 131072, 3, 65536, 131072, 3, 131072, 131072, 3, 196608, 131072, 3, 262144, 131072, 3, -65537, 917504, 5, -1, 917504, 5, 65535, 917504, 5, 131071, 917504, 5, 196607, 917504, 5, 262143, 917504, 5, 327679, 917504, 5, 393215, 917504, 5, 327689, 262144, 2, 327684, 393216, 1, 327685, 458752, 3, 327686, 131072, 3, 327691, 131072, 3, 327690, 131072, 3, 5, 131072, 3, 65541, 262144, 0, 458751, 917504, 5, 524287, 917504, 5, 393216, 131072, 3, 458752, 655360, 4, 393217, 131072, 3, 458753, 720896, 4, 393218, 262144, 2, 458754, 786432, 4, 393219, 131072, 3, 458755, 851968, 4, 393220, 327680, 2, 458756, 720896, 4, 393221, 458752, 3, 458757, 720896, 4, 393222, 131072, 3, 458758, 917504, 4, 393223, 262144, 3, 458759, 720896, 5, 393224, 262144, 3, 458760, 720896, 5, 393225, 262144, 3, 458761, 720896, 5, 393226, 131072, 3, 458762, 655360, 4, 393227, 131072, 3, 458763, 720896, 4, 393228, 131072, 3, 458764, 851968, 4, 393229, 131072, 3, 458765, 720896, 4, 393230, 131072, 3, 458766, 786432, 4, 393231, 131072, 3, 458767, 851968, 4, 393232, 131072, 3, 458768, 917504, 4, 393233, 655360, 5, 458769, 655360, 5)
+[node name="grass-tiles-01" parent="." unique_id=468134276 instance=ExtResource("3_bn2m3")]
+tile_map_data = PackedByteArray("AAD///7/AAAOAAUAAAD/////AAAOAAUAAAD//wAAAAAOAAUAAAD//wEAAAAOAAUAAAD//wIAAAAOAAUAAAD//wMAAAAOAAUAAAD//wQAAAAOAAUAAAD//wUAAAAOAAUAAAD//wYAAAAOAAUAAAD//wcAAAAOAAUAAAAAAP7/AAAKAAYAAAAAAP//AAAKAAcAAAAAAAAAAAACAAMAAAAAAAEAAAACAAMAAAAAAAIAAAACAAMAAAAAAAMAAAACAAMAAAAAAAQAAAACAAMAAAAAAAUAAAACAAMAAAAAAAYAAAACAAMAAAAAAAcAAAAKAAQAAAABAP7/AAAMAAYAAAABAP//AAAMAAcAAAABAAAAAAAEAAAAAAABAAEAAAAEAAIAAAABAAIAAAACAAMAAAABAAMAAAAFAAMAAAABAAQAAAACAAMAAAABAAUAAAACAAMAAAABAAYAAAACAAMAAAABAAcAAAALAAQAAAACAP7/AAANAAYAAAACAP//AAANAAcAAAACAAAAAAAEAAAAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAACAAMAAAAHAAIAAAACAAQAAAAEAAMAAAACAAUAAAAEAAAAAAACAAYAAAAEAAIAAAACAAcAAAAMAAQAAAADAP7/AAALAAYAAAADAP//AAALAAcAAAADAAAAAAACAAMAAAADAAEAAAAFAAAAAAADAAIAAAAEAAEAAAADAAMAAAAFAAIAAAADAAQAAAACAAMAAAADAAUAAAAFAAMAAAADAAYAAAACAAMAAAADAAcAAAANAAQAAAAEAP7/AAAMAAYAAAAEAP//AAAMAAcAAAAEAAAAAAACAAMAAAAEAAEAAAAHAAAAAAAEAAIAAAAEAAEAAAAEAAMAAAAHAAIAAAAEAAQAAAAEAAAAAAAEAAUAAAAGAAEAAAAEAAYAAAAFAAIAAAAEAAcAAAALAAQAAAAFAP7/AAANAAYAAAAFAP//AAANAAcAAAAFAAAAAAACAAMAAAAFAAEAAAAEAAAAAAAFAAIAAAAEAAEAAAAFAAMAAAAFAAIAAAAFAAQAAAACAAMAAAAFAAUAAAAHAAMAAAAFAAYAAAAHAAMAAAAFAAcAAAALAAQAAAAGAP7/AAADAAQAAAAGAP//AAALAAcAAAAGAAAAAAACAAMAAAAGAAEAAAAEAAAAAAAGAAIAAAAEAAEAAAAGAAMAAAAGAAIAAAAGAAQAAAACAAMAAAAGAAUAAAACAAMAAAAGAAYAAAACAAMAAAAGAAcAAAAOAAQAAAAHAP7/AAADAAQAAAAHAP//AAALAAcAAAAHAAAAAAACAAMAAAAHAAEAAAACAAMAAAAHAAIAAAACAAMAAAAHAAMAAAAHAAMAAAAHAAQAAAAEAAAAAAAHAAUAAAAEAAIAAAAHAAYAAAAEAAMAAAAHAAcAAAALAAUAAAAIAP7/AAADAAQAAAAIAP//AAALAAcAAAAIAAAAAAACAAMAAAAIAAEAAAACAAMAAAAIAAIAAAACAAMAAAAIAAMAAAACAAMAAAAIAAQAAAAEAAAAAAAIAAUAAAAEAAIAAAAIAAYAAAAEAAMAAAAIAAcAAAALAAUAAAAJAP7/AAADAAQAAAAJAP//AAALAAcAAAAJAAAAAAACAAMAAAAJAAEAAAACAAMAAAAJAAIAAAAFAAAAAAAJAAMAAAAFAAIAAAAJAAQAAAAEAAAAAAAJAAUAAAAEAAIAAAAJAAYAAAAEAAMAAAAJAAcAAAALAAUAAAAKAP7/AAADAAQAAAAKAP//AAALAAcAAAAKAAAAAAAEAAAAAAAKAAEAAAAEAAEAAAAKAAIAAAAHAAEAAAAKAAMAAAAHAAIAAAAKAAQAAAACAAMAAAAKAAUAAAACAAMAAAAKAAYAAAACAAMAAAAKAAcAAAAKAAQAAAALAP7/AAANAAYAAAALAP//AAANAAcAAAALAAAAAAACAAMAAAALAAEAAAACAAMAAAALAAIAAAACAAMAAAALAAMAAAACAAMAAAALAAQAAAACAAMAAAALAAUAAAACAAMAAAALAAYAAAACAAMAAAALAAcAAAALAAQAAAAMAP7/AAALAAYAAAAMAP//AAALAAcAAAAMAAAAAAAEAAMAAAAMAAEAAAAEAAAAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAIAAAAMAAQAAAACAAMAAAAMAAUAAAACAAMAAAAMAAYAAAACAAMAAAAMAAcAAAANAAQAAAANAP7/AAAMAAYAAAANAP//AAAMAAcAAAANAAAAAAACAAMAAAANAAEAAAACAAMAAAANAAIAAAAFAAAAAAANAAMAAAAFAAIAAAANAAQAAAACAAMAAAANAAUAAAACAAMAAAANAAYAAAACAAMAAAANAAcAAAALAAQAAAAOAP7/AAANAAYAAAAOAP//AAANAAcAAAAOAAAAAAAEAAAAAAAOAAEAAAAEAAEAAAAOAAIAAAAHAAEAAAAOAAMAAAAHAAIAAAAOAAQAAAACAAMAAAAOAAUAAAACAAMAAAAOAAYAAAACAAMAAAAOAAcAAAAMAAQAAAAPAP7/AAALAAYAAAAPAP//AAALAAcAAAAPAAAAAAACAAMAAAAPAAEAAAACAAMAAAAPAAIAAAACAAMAAAAPAAMAAAACAAMAAAAPAAQAAAACAAMAAAAPAAUAAAACAAMAAAAPAAYAAAACAAMAAAAPAAcAAAANAAQAAAAQAP7/AAAOAAYAAAAQAP//AAAOAAcAAAAQAAAAAAACAAMAAAAQAAEAAAACAAMAAAAQAAIAAAACAAMAAAAQAAMAAAACAAMAAAAQAAQAAAACAAMAAAAQAAUAAAACAAMAAAAQAAYAAAACAAMAAAAQAAcAAAAOAAQAAAARAP7/AAAKAAUAAAARAP//AAAKAAUAAAARAAAAAAAKAAUAAAARAAEAAAAKAAUAAAARAAIAAAAKAAUAAAARAAMAAAAKAAUAAAARAAQAAAAKAAUAAAARAAUAAAAKAAUAAAARAAYAAAAKAAUAAAARAAcAAAAKAAUAAAA=")
 
-[node name="PlayerSpawn" parent="." instance=ExtResource("4_bg7ug")]
-position = Vector2(324, 203)
+[node name="PlayerSpawn" parent="." unique_id=858455228 instance=ExtResource("4_bg7ug")]
+position = Vector2(337, 172)
 
-[node name="LevelTransition2" parent="." instance=ExtResource("5_o0hyy")]
+[node name="LevelTransition2" parent="." unique_id=122433362 instance=ExtResource("5_o0hyy")]
 position = Vector2(272, 256)
 level = "res://Levels/Dungeon01/04.tscn"
 target_transition_area = "LevelTransition2"
@@ -91,108 +90,109 @@ center_player = true
 size = 3
 side = 3
 
-[node name="NPC" parent="." instance=ExtResource("6_fsuok")]
-position = Vector2(131, 63)
+[node name="NPC" parent="." unique_id=1597556410 instance=ExtResource("6_fsuok")]
+position = Vector2(144, 55)
 npc_resource = SubResource("Resource_vg1n0")
 
-[node name="NpcWanderBehavior" parent="NPC" instance=ExtResource("10_dve0t")]
+[node name="NpcWanderBehavior" parent="NPC" unique_id=1813478429 instance=ExtResource("10_dve0t")]
 wander_range = 5
 
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("11_a0g71")]
+[node name="DialogInteraction" parent="NPC" unique_id=1800046505 instance=ExtResource("11_a0g71")]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=756067821]
 script = ExtResource("12_n3la7")
 text = "I can't believe it... the [color=#7A3E9D]dark aura[/color] is [shake]gone![/shake]"
 npc_info = SubResource("Resource_2l6ck")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=1608750438]
 script = ExtResource("12_n3la7")
 text = "You are a [color=#FFD700]true hero[/color]! My garden is finally [color=#4CAF50]safe[/color] from those monsters."
 npc_info = SubResource("Resource_rbd2o")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="NPC2" parent="." instance=ExtResource("6_fsuok")]
-position = Vector2(428, 107)
+[node name="NPC2" parent="." unique_id=1162967857 instance=ExtResource("6_fsuok")]
+position = Vector2(441, 76)
 npc_resource = SubResource("Resource_suexf")
 
-[node name="NpcWanderBehavior" parent="NPC2" instance=ExtResource("10_dve0t")]
+[node name="NpcWanderBehavior" parent="NPC2" unique_id=1455897251 instance=ExtResource("10_dve0t")]
 
-[node name="DialogInteraction" parent="NPC2" instance=ExtResource("11_a0g71")]
+[node name="DialogInteraction" parent="NPC2" unique_id=35352936 instance=ExtResource("11_a0g71")]
 
-[node name="DialogText" type="Node" parent="NPC2/DialogInteraction"]
+[node name="DialogText" type="Node" parent="NPC2/DialogInteraction" unique_id=696863064]
 script = ExtResource("12_n3la7")
 text = "[shake]Wow![/shake] You actually defeated the [color=#FF4500]Goblin Warlord[/color]?!"
 npc_info = SubResource("Resource_t4onu")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="NPC2/DialogInteraction" unique_id=1848251411]
 script = ExtResource("12_n3la7")
 text = "I always knew you could do it... [wave]well, mostly![/wave]"
 npc_info = SubResource("Resource_ao3f7")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="NPC2/DialogInteraction" unique_id=1270990543]
 script = ExtResource("12_n3la7")
 text = "We will never forget your [color=#FFD700]courage[/color]! You're a [wave]legend[/wave] now!"
 npc_info = SubResource("Resource_t1cxi")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="NPC5" parent="." instance=ExtResource("6_fsuok")]
-position = Vector2(270, 192)
+[node name="NPC5" parent="." unique_id=1043428781 instance=ExtResource("6_fsuok")]
+position = Vector2(269, 203)
 npc_resource = ExtResource("13_u38tu")
 
-[node name="DialogInteraction" parent="NPC5" instance=ExtResource("11_a0g71")]
+[node name="DialogInteraction" parent="NPC5" unique_id=974226150 instance=ExtResource("11_a0g71")]
 
-[node name="DialogText" type="Node" parent="NPC5/DialogInteraction"]
+[node name="DialogText" type="Node" parent="NPC5/DialogInteraction" unique_id=1235301495]
 script = ExtResource("12_n3la7")
 text = "Ah... you have [wave]returned victorious[/wave]."
 npc_info = ExtResource("13_u38tu")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText2" type="Node" parent="NPC5/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="NPC5/DialogInteraction" unique_id=1258373823]
 script = ExtResource("12_n3la7")
 text = "The [color=#7A3E9D]dark aura[/color] from the dungeon has finally lifted. The village is [color=#4CAF50]safe[/color]."
 npc_info = ExtResource("13_u38tu")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText3" type="Node" parent="NPC5/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="NPC5/DialogInteraction" unique_id=1850261388]
 script = ExtResource("12_n3la7")
 text = "Thank you, [color=#FFD700]brave hero[/color]. Now, we can finally live in [wave]peace[/wave]."
 npc_info = ExtResource("13_u38tu")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node2D" parent="." unique_id=1673824141]
+position = Vector2(13, -31)
 
-[node name="Pot" parent="Node" instance=ExtResource("17_y6ljl")]
+[node name="Pot" parent="Node" unique_id=1784935553 instance=ExtResource("17_y6ljl")]
 position = Vector2(43, 91)
 
-[node name="Pot2" parent="Node" instance=ExtResource("17_y6ljl")]
+[node name="Pot2" parent="Node" unique_id=342187811 instance=ExtResource("17_y6ljl")]
 position = Vector2(42, 108)
 
-[node name="Pot3" parent="Node" instance=ExtResource("17_y6ljl")]
+[node name="Pot3" parent="Node" unique_id=863302318 instance=ExtResource("17_y6ljl")]
 position = Vector2(64, 92)
 
-[node name="Pot4" parent="Node" instance=ExtResource("17_y6ljl")]
+[node name="Pot4" parent="Node" unique_id=641665451 instance=ExtResource("17_y6ljl")]
 position = Vector2(63, 108)
 
-[node name="Plant" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant" parent="Node" unique_id=292210711 instance=ExtResource("15_bn2m3")]
 position = Vector2(11, 185)
 
-[node name="Plant2" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant2" parent="Node" unique_id=1838876598 instance=ExtResource("15_bn2m3")]
 position = Vector2(12, 214)
 
-[node name="Plant5" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant5" parent="Node" unique_id=1501026697 instance=ExtResource("15_bn2m3")]
 position = Vector2(11, 241)
 
-[node name="Plant6" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant6" parent="Node" unique_id=108936560 instance=ExtResource("15_bn2m3")]
 position = Vector2(11, 96)
 
-[node name="Plant7" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant7" parent="Node" unique_id=954737549 instance=ExtResource("15_bn2m3")]
 position = Vector2(10, 60)
 
-[node name="Plant3" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant3" parent="Node" unique_id=1860440593 instance=ExtResource("15_bn2m3")]
 position = Vector2(11, 129)
 
-[node name="Plant4" parent="Node" instance=ExtResource("15_bn2m3")]
+[node name="Plant4" parent="Node" unique_id=349630153 instance=ExtResource("15_bn2m3")]
 position = Vector2(12, 156)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://nsvcxvfdfhfq"]
+[gd_scene format=4 uid="uid://nsvcxvfdfhfq"]
 
 [ext_resource type="Script" uid="uid://upcgm21krjkh" path="res://Enemies/Scripts/enemy.gd" id="1_5uyfm"]
 [ext_resource type="PackedScene" uid="uid://djrm2g71lsjgp" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="2_lq425"]
@@ -834,103 +834,100 @@ _data = {
 &"destroy": SubResource("Animation_ke740")
 }
 
-[node name="Goplin" type="CharacterBody2D"]
+[node name="Goplin" type="CharacterBody2D" unique_id=2036532119]
 z_index = 1
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_5uyfm")
 hp = 5
 
-[node name="HurtBox" parent="." instance=ExtResource("2_lq425")]
+[node name="HurtBox" parent="." unique_id=899300873 instance=ExtResource("2_lq425")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=834759956]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_j1ull")
 debug_color = Color(0.7740976, 0.4437866, 3.85046e-07, 0.41960785)
 
-[node name="HitBox" parent="." instance=ExtResource("3_fqu7u")]
+[node name="HitBox" parent="." unique_id=1681779624 instance=ExtResource("3_fqu7u")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox" unique_id=777602461]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_j1ull")
 debug_color = Color(0.99651545, 0, 0.18703246, 0.41960785)
 
-[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=447856979]
 modulate = Color(0.003921569, 0.003921569, 0.003921569, 0.5882353)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_kqqde")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523813941]
 position = Vector2(0, -14)
 texture = ExtResource("5_umk46")
 hframes = 8
 vframes = 3
 
-[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("2_lq425")]
+[node name="AttackHurtBox" parent="Sprite2D" unique_id=1509079643 instance=ExtResource("2_lq425")]
 position = Vector2(0, 18)
 monitoring = false
 damage = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox" unique_id=1473316499]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_j1ull")
 debug_color = Color(0.7740976, 0.4437866, 3.85046e-07, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610568183]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wyclx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3of0s")
-}
-autoplay = "idle_down"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1706215941]
+libraries/ = SubResource("AnimationLibrary_3of0s")
+autoplay = &"idle_down"
 
-[node name="EnemyStateMachine" type="Node" parent="."]
+[node name="EnemyStateMachine" type="Node" parent="." unique_id=648332604]
 script = ExtResource("8_7q1nx")
 
-[node name="idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+[node name="idle" type="Node" parent="EnemyStateMachine" unique_id=437962220 node_paths=PackedStringArray("after_idle_state")]
 script = ExtResource("9_eeg22")
 after_idle_state = NodePath("../wander")
 
-[node name="wander" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+[node name="wander" type="Node" parent="EnemyStateMachine" unique_id=1756907595 node_paths=PackedStringArray("next_state")]
 script = ExtResource("10_dxjo3")
 wander_speed = 30.0
 state_animation_duration = 0.7
 next_state = NodePath("../idle")
 
-[node name="Stun" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
+[node name="Stun" type="Node" parent="EnemyStateMachine" unique_id=1812019055 node_paths=PackedStringArray("next_state")]
 script = ExtResource("11_4a675")
 next_state = NodePath("../Chase")
 
-[node name="Destroy" type="Node" parent="EnemyStateMachine"]
+[node name="Destroy" type="Node" parent="EnemyStateMachine" unique_id=1125979790]
 script = ExtResource("12_wmqew")
 decelerate_speed = 5.0
 drops = Array[ExtResource("13_rvecm")]([SubResource("Resource_ts4pi"), SubResource("Resource_2vvwu"), SubResource("Resource_cpg5j"), SubResource("Resource_6qarh")])
 
-[node name="Chase" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
+[node name="Chase" type="Node" parent="EnemyStateMachine" unique_id=2145170091 node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
 script = ExtResource("14_os3db")
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
+state_aggro_duration = 5.0
 next_state = NodePath("../idle")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1481087961]
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="DestroyEffectSprite" type="Sprite2D" parent="."]
+[node name="DestroyEffectSprite" type="Sprite2D" parent="." unique_id=991861464]
 visible = false
 position = Vector2(0, -9)
 texture = ExtResource("17_pj30j")
 hframes = 6
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEffectSprite"]
-libraries = {
-&"": SubResource("AnimationLibrary_ts4pi")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DestroyEffectSprite" unique_id=1448918434]
+libraries/ = SubResource("AnimationLibrary_ts4pi")
 
-[node name="VisionArea" parent="." instance=ExtResource("14_i714l")]
+[node name="VisionArea" parent="." unique_id=258368325 instance=ExtResource("14_i714l")]
 position = Vector2(0, -8)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea" unique_id=1084796957]
 polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)

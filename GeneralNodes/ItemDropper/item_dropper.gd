@@ -30,7 +30,7 @@ func drop_item() -> void:
 	
 	var drop = PICKUP.instantiate() as ItemPickup
 	drop.item_data = item_data
-	add_child( drop )
+	add_child.call_deferred( drop )
 	drop.picked_up.connect( _on_drop_pickup )
 	audio.play()
 

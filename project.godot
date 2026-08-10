@@ -29,6 +29,7 @@ SecneTransition="*res://GUI/secne_transition/secne_transition.tscn"
 SaveManager="*res://00_Globals/global_save_manager.gd"
 PauseMenu="*res://GUI/pause_menu/pause_menu.tscn"
 DialogSystem="*res://GUI/dialog_system/dialog_system.tscn"
+QuestManager="*uid://c6cgxfoqqia8d"
 
 [display]
 

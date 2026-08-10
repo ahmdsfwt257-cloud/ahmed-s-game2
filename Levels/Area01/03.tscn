@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg6pexe1fytqb"]
+[gd_scene format=4 uid="uid://bg6pexe1fytqb"]
 
 [ext_resource type="Script" uid="uid://cjcx0vqdln0j3" path="res://Levels/scripts/level.gd" id="1_t51ec"]
 [ext_resource type="AudioStream" uid="uid://bl5wb0rqvuyi3" path="res://Levels/music/example_music_01.ogg" id="2_jvg0d"]
-[ext_resource type="PackedScene" uid="uid://nk7aenuy5tol" path="res://Tile Maps/grass-01.tscn" id="2_qetoi"]
+[ext_resource type="PackedScene" uid="uid://cxt7h7bgoxaw" path="res://Tile Maps/grass-tiles-01.tscn" id="3_n7k4n"]
 [ext_resource type="PackedScene" uid="uid://cpim3e2fjgxxb" path="res://Levels/player_spawn.tscn" id="3_ye5qq"]
 [ext_resource type="PackedScene" uid="uid://6c0u4322u5i5" path="res://Levels/level_transition.tscn" id="5_ye5qq"]
 [ext_resource type="PackedScene" uid="uid://nsvcxvfdfhfq" path="res://Enemies/goblin/goblin.tscn" id="6_lry6g"]
@@ -16,155 +16,200 @@
 [ext_resource type="PackedScene" uid="uid://dxjck51gsetno" path="res://interactables/TreasureCheast/treasure-chest.tscn" id="14_n7k4n"]
 [ext_resource type="Resource" uid="uid://usrcketbj74q" path="res://Items/potion.tres" id="15_ok2uc"]
 
-[node name="03" type="Node2D"]
+[node name="03" type="Node2D" unique_id=1636524688]
 script = ExtResource("1_t51ec")
 music = ExtResource("2_jvg0d")
 
-[node name="Grass01" parent="." instance=ExtResource("2_qetoi")]
-layer_0/tile_data = PackedInt32Array(-131075, 0, 3, -65539, 131072, 4, -3, 131072, 5, 65533, 131072, 6, 131069, 0, 2, 196605, 0, 3, 262141, 0, 3, 327677, 786432, 6, 393213, 786432, 7, 458749, 786432, 0, 524285, 786432, 3, 589821, 720896, 4, 655357, 0, 3, 720893, 131072, 1, 786429, 0, 3, -131074, 0, 3, -65538, 196608, 4, -2, 196608, 5, 65534, 196608, 6, 131070, 0, 2, 196606, 0, 3, 262142, 0, 3, 327678, 851968, 6, 393214, 851968, 7, 458750, 917504, 0, 524286, 851968, 3, 589822, 720896, 4, 655358, 0, 3, 720894, 0, 3, 786430, 0, 3, -131073, 0, 3, -65537, 262144, 4, -1, 262144, 5, 65535, 262144, 6, 131071, 917504, 5, 196607, 917504, 5, 262143, 917504, 5, 327679, 917504, 5, 393215, 917504, 7, 458751, 917504, 0, 589823, 917504, 4, 655359, 917504, 5, 720895, 917504, 5, 786431, 917504, 5, -196608, 0, 3, -131072, 196608, 4, -65536, 196608, 5, 0, 196608, 6, 65536, 0, 3, 131072, 0, 3, 196608, 786432, 0, 262144, 786432, 1, 327680, 786432, 1, 393216, 589824, 1, 458752, 851968, 3, 524288, 262144, 3, 589824, 0, 3, 655360, 0, 3, 720896, 655360, 4, -196607, 0, 3, -131071, 262144, 4, -65535, 262144, 5, 1, 262144, 6, 65537, 0, 3, 131073, 0, 3, 196609, 983040, 0, 262145, 983040, 2, 327681, 983040, 2, 393217, 655360, 1, 458753, 851968, 3, 524289, 0, 3, 589825, 131072, 1, 655361, 65536, 1, 720897, 720896, 4, -196606, 0, 3, -131070, 131072, 4, -65534, 131072, 5, 2, 131072, 6, 65538, 65536, 1, 131074, 65536, 1, 196610, 65536, 1, 262146, 131072, 1, 327682, 0, 3, 393218, 917504, 0, 458754, 851968, 3, 524290, 0, 3, 589826, 131072, 1, 655362, 0, 3, 720898, 720896, 4, -196605, 0, 3, -131069, 196608, 4, -65533, 196608, 5, 3, 196608, 6, 65539, 0, 3, 131075, 0, 3, 196611, 0, 3, 262147, 0, 3, 327683, 0, 3, 393219, 917504, 0, 458755, 851968, 3, 524291, 131072, 1, 589827, 0, 3, 655363, 0, 3, 720899, 720896, 4, -196604, 0, 3, -131068, 262144, 4, -65532, 262144, 5, 4, 262144, 6, 65540, 0, 3, 131076, 0, 3, 196612, 262144, 3, 262148, 131072, 1, 327684, 0, 3, 393220, 917504, 0, 458756, 851968, 3, 524292, 0, 3, 589828, 65536, 3, 655364, 0, 3, 720900, 720896, 4, -196603, 655360, 5, -131067, 655360, 6, -65531, 589824, 7, 5, 917504, 7, 65541, 0, 3, 131077, 65536, 1, 196613, 262144, 3, 262149, 0, 3, 327685, 0, 3, 393221, 917504, 0, 458757, 851968, 3, 524293, 0, 3, 589829, 65536, 1, 655365, 0, 3, 720901, 720896, 4, -196602, 0, 3, -131066, 0, 3, -65530, 786432, 0, 6, 786432, 1, 65542, 786432, 1, 131078, 786432, 1, 196614, 786432, 1, 262150, 786432, 1, 327686, 786432, 1, 393222, 589824, 1, 458758, 851968, 3, 524294, 65536, 1, 589830, 0, 3, 655366, 0, 3, 720902, 720896, 4, -196601, 786432, 0, -131065, 786432, 1, -65529, 589824, 1, 7, 851968, 2, 65543, 851968, 2, 131079, 851968, 2, 196615, 851968, 2, 262151, 851968, 2, 327687, 851968, 2, 393223, 851968, 2, 458759, 851968, 3, 524295, 0, 3, 589831, 0, 3, 655367, 0, 3, 720903, 720896, 4, -196600, 983040, 0, -131064, 983040, 2, -65528, 655360, 1, 8, 851968, 2, 65544, 655360, 2, 131080, 983040, 2, 196616, 983040, 2, 262152, 983040, 2, 327688, 983040, 2, 393224, 983040, 1, 458760, 983040, 3, 524296, 0, 3, 589832, 65536, 1, 655368, 0, 3, 720904, 720896, 4, -196599, 0, 3, -131063, 0, 3, -65527, 983040, 0, 9, 983040, 2, 65545, 655360, 3, 131081, 0, 3, 196617, 0, 3, 262153, 0, 3, 327689, 0, 3, 393225, 393216, 3, 458761, 0, 3, 524297, 0, 3, 589833, 131072, 1, 655369, 0, 3, 720905, 720896, 4, -196598, 655360, 5, -131062, 655360, 5, -65526, 589824, 6, 10, 655360, 7, 65546, 393216, 3, 131082, 0, 3, 196618, 0, 3, 262154, 0, 3, 327690, 0, 3, 393226, 393216, 3, 458762, 0, 3, 524298, 65536, 1, 589834, 65536, 3, 655370, 0, 3, 720906, 720896, 4, -196597, 0, 3, -131061, 131072, 4, -65525, 131072, 5, 11, 131072, 6, 65547, 458752, 0, 131083, 262144, 1, 196619, 524288, 1, 262155, 524288, 2, 327691, 262144, 1, 393227, 458752, 2, 458763, 0, 3, 524299, 131072, 1, 589835, 0, 3, 655371, 65536, 1, 720907, 720896, 4, -196596, 0, 3, -131060, 196608, 4, -65524, 196608, 5, 12, 196608, 6, 65548, 0, 3, 131084, 0, 3, 196620, 983040, 0, 262156, 983040, 3, 327692, 0, 3, 393228, 0, 3, 458764, 131072, 1, 524300, 0, 3, 589836, 131072, 1, 655372, 0, 3, 720908, 720896, 4, -196595, 0, 3, -131059, 262144, 4, -65523, 262144, 5, 13, 262144, 6, 65549, 0, 3, 131085, 0, 3, 196621, 131072, 1, 262157, 0, 3, 327693, 0, 3, 393229, 65536, 1, 458765, 0, 3, 524301, 0, 3, 589837, 131072, 1, 655373, 0, 3, 720909, 720896, 4, -196594, 0, 3, -131058, 131072, 4, -65522, 131072, 5, 14, 131072, 6, 65550, 65536, 1, 131086, 0, 3, 196622, 65536, 1, 262158, 131072, 1, 327694, 0, 3, 393230, 0, 3, 458766, 131072, 1, 524302, 65536, 1, 589838, 0, 3, 655374, 65536, 1, 720910, 720896, 4, -196593, 0, 3, -131057, 196608, 4, -65521, 196608, 5, 15, 196608, 6, 65551, 262144, 3, 131087, 0, 3, 196623, 0, 3, 262159, 0, 3, 327695, 0, 3, 393231, 131072, 1, 458767, 0, 3, 524303, 0, 3, 589839, 0, 3, 655375, 0, 3, 720911, 917504, 4, -196592, 0, 3, -131056, 131072, 4, -65520, 131072, 5, 16, 131072, 6, 65552, 655360, 4, 131088, 655360, 5, 196624, 655360, 5, 262160, 655360, 5, 327696, 655360, 5, 393232, 655360, 5, 458768, 655360, 5, 524304, 655360, 5, 589840, 655360, 5, 655376, 655360, 5, -196591, 0, 3, -131055, 196608, 4, -65519, 196608, 5, 17, 196608, 6, 65553, 720896, 4, 131089, 131072, 1, 196625, 131072, 1, 262161, 0, 3, 327697, 131072, 1, 393233, 131072, 1, 458769, 65536, 1, 524305, 131072, 1, 589841, 0, 3, 655377, 65536, 1, 720913, 0, 3, -196590, 0, 3, -131054, 262144, 4, -65518, 262144, 5, 18, 262144, 6, 65554, 720896, 4, 131090, 131072, 1, 196626, 0, 3, 262162, 65536, 1, 327698, 0, 3, 393234, 0, 3, 458770, 0, 3, 524306, 131072, 1, 589842, 0, 3, 655378, 0, 3, 720914, 131072, 1, 720912, 655360, 5, 524287, 851968, 3)
+[node name="grass-tiles-01" parent="." unique_id=468134276 instance=ExtResource("3_n7k4n")]
+tile_map_data = PackedByteArray("AAD9//3/AAAAAAMAAAD9//7/AAACAAQAAAD9////AAACAAUAAAD9/wAAAAACAAYAAAD9/wEAAAAAAAIAAAD9/wIAAAAAAAMAAAD9/wMAAAAAAAMAAAD9/wQAAAAMAAYAAAD9/wUAAAAMAAcAAAD9/wYAAAAMAAAAAAD9/wcAAAAMAAMAAAD9/wgAAAALAAQAAAD9/wkAAAAAAAMAAAD9/woAAAACAAEAAAD9/wsAAAAAAAMAAAD+//3/AAAAAAMAAAD+//7/AAADAAQAAAD+////AAADAAUAAAD+/wAAAAADAAYAAAD+/wEAAAAAAAIAAAD+/wIAAAAAAAMAAAD+/wMAAAAAAAMAAAD+/wQAAAANAAYAAAD+/wUAAAANAAcAAAD+/wYAAAAOAAAAAAD+/wcAAAANAAMAAAD+/wgAAAALAAQAAAD+/wkAAAAAAAMAAAD+/woAAAAAAAMAAAD+/wsAAAAAAAMAAAD///3/AAAAAAMAAAD///7/AAAEAAQAAAD/////AAAEAAUAAAD//wAAAAAEAAYAAAD//wEAAAAOAAUAAAD//wIAAAAOAAUAAAD//wMAAAAOAAUAAAD//wQAAAAOAAUAAAD//wUAAAAOAAcAAAD//wYAAAAOAAAAAAD//wcAAAANAAMAAAD//wgAAAAOAAQAAAD//wkAAAAOAAUAAAD//woAAAAOAAUAAAD//wsAAAAOAAUAAAAAAP3/AAAAAAMAAAAAAP7/AAADAAQAAAAAAP//AAADAAUAAAAAAAAAAAADAAYAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAMAAAAMAAAAAAAAAAQAAAAMAAEAAAAAAAUAAAAMAAEAAAAAAAYAAAAJAAEAAAAAAAcAAAANAAMAAAAAAAgAAAAEAAMAAAAAAAkAAAAAAAMAAAAAAAoAAAAAAAMAAAAAAAsAAAAKAAQAAAABAP3/AAAAAAMAAAABAP7/AAAEAAQAAAABAP//AAAEAAUAAAABAAAAAAAEAAYAAAABAAEAAAAAAAMAAAABAAIAAAAAAAMAAAABAAMAAAAPAAAAAAABAAQAAAAPAAIAAAABAAUAAAAPAAIAAAABAAYAAAAKAAEAAAABAAcAAAANAAMAAAABAAgAAAAAAAMAAAABAAkAAAACAAEAAAABAAoAAAABAAEAAAABAAsAAAALAAQAAAACAP3/AAAAAAMAAAACAP7/AAACAAQAAAACAP//AAACAAUAAAACAAAAAAACAAYAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAACAAEAAAACAAUAAAAAAAMAAAACAAYAAAAOAAAAAAACAAcAAAANAAMAAAACAAgAAAAAAAMAAAACAAkAAAACAAEAAAACAAoAAAAAAAMAAAACAAsAAAALAAQAAAADAP3/AAAAAAMAAAADAP7/AAADAAQAAAADAP//AAADAAUAAAADAAAAAAADAAYAAAADAAEAAAAAAAMAAAADAAIAAAAAAAMAAAADAAMAAAAAAAMAAAADAAQAAAAAAAMAAAADAAUAAAAAAAMAAAADAAYAAAAOAAAAAAADAAcAAAANAAMAAAADAAgAAAACAAEAAAADAAkAAAAAAAMAAAADAAoAAAAAAAMAAAADAAsAAAALAAQAAAAEAP3/AAAAAAMAAAAEAP7/AAAEAAQAAAAEAP//AAAEAAUAAAAEAAAAAAAEAAYAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAMAAAAEAAMAAAAEAAMAAAAEAAQAAAACAAEAAAAEAAUAAAAAAAMAAAAEAAYAAAAOAAAAAAAEAAcAAAANAAMAAAAEAAgAAAAAAAMAAAAEAAkAAAABAAMAAAAEAAoAAAAAAAMAAAAEAAsAAAALAAQAAAAFAP3/AAAKAAUAAAAFAP7/AAAKAAYAAAAFAP//AAAJAAcAAAAFAAAAAAAOAAcAAAAFAAEAAAAAAAMAAAAFAAIAAAABAAEAAAAFAAMAAAAEAAMAAAAFAAQAAAAAAAMAAAAFAAUAAAAAAAMAAAAFAAYAAAAOAAAAAAAFAAcAAAANAAMAAAAFAAgAAAAAAAMAAAAFAAkAAAABAAEAAAAFAAoAAAAAAAMAAAAFAAsAAAALAAQAAAAGAP3/AAAAAAMAAAAGAP7/AAAAAAMAAAAGAP//AAAMAAAAAAAGAAAAAAAMAAEAAAAGAAEAAAAMAAEAAAAGAAIAAAAMAAEAAAAGAAMAAAAMAAEAAAAGAAQAAAAMAAEAAAAGAAUAAAAMAAEAAAAGAAYAAAAJAAEAAAAGAAcAAAANAAMAAAAGAAgAAAABAAEAAAAGAAkAAAAAAAMAAAAGAAoAAAAAAAMAAAAGAAsAAAALAAQAAAAHAP3/AAAMAAAAAAAHAP7/AAAMAAEAAAAHAP//AAAJAAEAAAAHAAAAAAANAAIAAAAHAAEAAAANAAIAAAAHAAIAAAANAAIAAAAHAAMAAAANAAIAAAAHAAQAAAANAAIAAAAHAAUAAAANAAIAAAAHAAYAAAANAAIAAAAHAAcAAAANAAMAAAAHAAgAAAAAAAMAAAAHAAkAAAAAAAMAAAAHAAoAAAAAAAMAAAAHAAsAAAALAAQAAAAIAP3/AAAPAAAAAAAIAP7/AAAPAAIAAAAIAP//AAAKAAEAAAAIAAAAAAANAAIAAAAIAAEAAAAKAAIAAAAIAAIAAAAPAAIAAAAIAAMAAAAPAAIAAAAIAAQAAAAPAAIAAAAIAAUAAAAPAAIAAAAIAAYAAAAPAAEAAAAIAAcAAAAPAAMAAAAIAAgAAAAAAAMAAAAIAAkAAAABAAEAAAAIAAoAAAAAAAMAAAAIAAsAAAALAAQAAAAJAP3/AAAAAAMAAAAJAP7/AAAAAAMAAAAJAP//AAAPAAAAAAAJAAAAAAAPAAIAAAAJAAEAAAAKAAMAAAAJAAIAAAAAAAMAAAAJAAMAAAAAAAMAAAAJAAQAAAAAAAMAAAAJAAUAAAAAAAMAAAAJAAYAAAAGAAMAAAAJAAcAAAAAAAMAAAAJAAgAAAAAAAMAAAAJAAkAAAACAAEAAAAJAAoAAAAAAAMAAAAJAAsAAAALAAQAAAAKAP3/AAAKAAUAAAAKAP7/AAAKAAUAAAAKAP//AAAJAAYAAAAKAAAAAAAKAAcAAAAKAAEAAAAGAAMAAAAKAAIAAAAAAAMAAAAKAAMAAAAAAAMAAAAKAAQAAAAAAAMAAAAKAAUAAAAAAAMAAAAKAAYAAAAGAAMAAAAKAAcAAAAAAAMAAAAKAAgAAAABAAEAAAAKAAkAAAABAAMAAAAKAAoAAAAAAAMAAAAKAAsAAAALAAQAAAALAP3/AAAAAAMAAAALAP7/AAACAAQAAAALAP//AAACAAUAAAALAAAAAAACAAYAAAALAAEAAAAHAAAAAAALAAIAAAAEAAEAAAALAAMAAAAIAAEAAAALAAQAAAAIAAIAAAALAAUAAAAEAAEAAAALAAYAAAAHAAIAAAALAAcAAAAAAAMAAAALAAgAAAACAAEAAAALAAkAAAAAAAMAAAALAAoAAAABAAEAAAALAAsAAAALAAQAAAAMAP3/AAAAAAMAAAAMAP7/AAADAAQAAAAMAP//AAADAAUAAAAMAAAAAAADAAYAAAAMAAEAAAAAAAMAAAAMAAIAAAAAAAMAAAAMAAMAAAAPAAAAAAAMAAQAAAAPAAMAAAAMAAUAAAAAAAMAAAAMAAYAAAAAAAMAAAAMAAcAAAACAAEAAAAMAAgAAAAAAAMAAAAMAAkAAAACAAEAAAAMAAoAAAAAAAMAAAAMAAsAAAALAAQAAAANAP3/AAAAAAMAAAANAP7/AAAEAAQAAAANAP//AAAEAAUAAAANAAAAAAAEAAYAAAANAAEAAAAAAAMAAAANAAIAAAAAAAMAAAANAAMAAAACAAEAAAANAAQAAAAAAAMAAAANAAUAAAAAAAMAAAANAAYAAAABAAEAAAANAAcAAAAAAAMAAAANAAgAAAAAAAMAAAANAAkAAAACAAEAAAANAAoAAAAAAAMAAAANAAsAAAALAAQAAAAOAP3/AAAAAAMAAAAOAP7/AAACAAQAAAAOAP//AAACAAUAAAAOAAAAAAACAAYAAAAOAAEAAAABAAEAAAAOAAIAAAAAAAMAAAAOAAMAAAABAAEAAAAOAAQAAAACAAEAAAAOAAUAAAAAAAMAAAAOAAYAAAAAAAMAAAAOAAcAAAACAAEAAAAOAAgAAAABAAEAAAAOAAkAAAAAAAMAAAAOAAoAAAABAAEAAAAOAAsAAAALAAQAAAAPAP3/AAAAAAMAAAAPAP7/AAADAAQAAAAPAP//AAADAAUAAAAPAAAAAAADAAYAAAAPAAEAAAAEAAMAAAAPAAIAAAAAAAMAAAAPAAMAAAAAAAMAAAAPAAQAAAAAAAMAAAAPAAUAAAAAAAMAAAAPAAYAAAACAAEAAAAPAAcAAAAAAAMAAAAPAAgAAAAAAAMAAAAPAAkAAAAAAAMAAAAPAAoAAAAAAAMAAAAPAAsAAAAOAAQAAAAQAP3/AAAAAAMAAAAQAP7/AAACAAQAAAAQAP//AAACAAUAAAAQAAAAAAACAAYAAAAQAAEAAAAKAAQAAAAQAAIAAAAKAAUAAAAQAAMAAAAKAAUAAAAQAAQAAAAKAAUAAAAQAAUAAAAKAAUAAAAQAAYAAAAKAAUAAAAQAAcAAAAKAAUAAAAQAAgAAAAKAAUAAAAQAAkAAAAKAAUAAAAQAAoAAAAKAAUAAAAQAAsAAAAKAAUAAAARAP3/AAAAAAMAAAARAP7/AAADAAQAAAARAP//AAADAAUAAAARAAAAAAADAAYAAAARAAEAAAALAAQAAAARAAIAAAACAAEAAAARAAMAAAACAAEAAAARAAQAAAAAAAMAAAARAAUAAAACAAEAAAARAAYAAAACAAEAAAARAAcAAAABAAEAAAARAAgAAAACAAEAAAARAAkAAAAAAAMAAAARAAoAAAABAAEAAAARAAsAAAAAAAMAAAASAP3/AAAAAAMAAAASAP7/AAAEAAQAAAASAP//AAAEAAUAAAASAAAAAAAEAAYAAAASAAEAAAALAAQAAAASAAIAAAACAAEAAAASAAMAAAAAAAMAAAASAAQAAAABAAEAAAASAAUAAAAAAAMAAAASAAYAAAAAAAMAAAASAAcAAAAAAAMAAAASAAgAAAACAAEAAAASAAkAAAAAAAMAAAASAAoAAAAAAAMAAAASAAsAAAACAAEAAAA=")
 
-[node name="PlayerSpawn" parent="." instance=ExtResource("3_ye5qq")]
+[node name="PlayerSpawn" parent="." unique_id=1762681044 instance=ExtResource("3_ye5qq")]
 position = Vector2(271, 190)
 
-[node name="LevelTransition2" parent="." instance=ExtResource("5_ye5qq")]
+[node name="LevelTransition2" parent="." unique_id=341318284 instance=ExtResource("5_ye5qq")]
 position = Vector2(256, -96)
 level = "uid://bxlye8p7xslin"
 size = 4
 side = 2
 
-[node name="LevelTransition" parent="." instance=ExtResource("5_ye5qq")]
+[node name="LevelTransition" parent="." unique_id=225551133 instance=ExtResource("5_ye5qq")]
 position = Vector2(-96, 224)
 level = "uid://qn3qcjl3ax0o"
 target_transition_area = "LevelTransition2"
 
-[node name="enemies" type="Node" parent="."]
+[node name="enemies" type="Node" parent="." unique_id=315528346]
 
-[node name="Goplin" parent="enemies" instance=ExtResource("6_lry6g")]
+[node name="Goplin" parent="enemies" unique_id=1158129596 instance=ExtResource("6_lry6g")]
 position = Vector2(234, 315)
 
-[node name="Goplin2" parent="enemies" instance=ExtResource("6_lry6g")]
+[node name="Goplin2" parent="enemies" unique_id=1479506856 instance=ExtResource("6_lry6g")]
 position = Vector2(56, 46)
 
-[node name="Goplin3" parent="enemies" instance=ExtResource("6_lry6g")]
+[node name="Goplin3" parent="enemies" unique_id=527286261 instance=ExtResource("6_lry6g")]
 position = Vector2(436, 49)
 
-[node name="NPC" parent="." instance=ExtResource("7_ut76y")]
+[node name="NPC" parent="." unique_id=1263153626 instance=ExtResource("7_ut76y")]
 position = Vector2(257, 16)
 npc_resource = ExtResource("13_n7k4n")
 
-[node name="NpcWanderBehavior" parent="NPC" instance=ExtResource("8_gv52n")]
+[node name="NpcWanderBehavior" parent="NPC" unique_id=762652329 instance=ExtResource("8_gv52n")]
 
-[node name="DialogInteraction" parent="NPC" instance=ExtResource("10_v72oj")]
+[node name="DialogInteraction" parent="NPC" unique_id=1266167580 instance=ExtResource("10_v72oj")]
 
-[node name="DialogText" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1474947744]
 script = ExtResource("11_q54cq")
 text = "You're heading south? The dungeon is that way..."
 npc_info = ExtResource("13_n7k4n")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText2" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="NPC/DialogInteraction" unique_id=476548249]
 script = ExtResource("11_q54cq")
 text = "No one's come back from it. Not in years."
 npc_info = ExtResource("13_n7k4n")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="DialogText3" type="Node" parent="NPC/DialogInteraction"]
+[node name="DialogText3" type="Node" parent="NPC/DialogInteraction" unique_id=1901001752]
 script = ExtResource("11_q54cq")
 text = "I mean... except you. Probably. Good luck!"
 npc_info = ExtResource("13_n7k4n")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node" parent="." unique_id=1212145310]
 
-[node name="Pot" parent="Node" instance=ExtResource("12_q54cq")]
+[node name="Pot" parent="Node" unique_id=1168240571 instance=ExtResource("12_q54cq")]
 z_index = 1
 position = Vector2(144, 115)
 
-[node name="Pot2" parent="Node" instance=ExtResource("12_q54cq")]
+[node name="Pot2" parent="Node" unique_id=2089156212 instance=ExtResource("12_q54cq")]
 z_index = 1
 position = Vector2(177, 115)
 
-[node name="Pot3" parent="Node" instance=ExtResource("12_q54cq")]
+[node name="Pot3" parent="Node" unique_id=2106918987 instance=ExtResource("12_q54cq")]
 z_index = 1
 position = Vector2(17, 276)
 
-[node name="Pot4" parent="Node" instance=ExtResource("12_q54cq")]
+[node name="Pot4" parent="Node" unique_id=1916218204 instance=ExtResource("12_q54cq")]
 z_index = 1
 position = Vector2(498, 52)
 
-[node name="Plant" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant" parent="Node" unique_id=1257771872 instance=ExtResource("13_55lxj")]
 position = Vector2(120, 51)
 
-[node name="Plant2" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant2" parent="Node" unique_id=1829286796 instance=ExtResource("13_55lxj")]
 position = Vector2(154, 50)
 
-[node name="Plant3" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant3" parent="Node" unique_id=1210532118 instance=ExtResource("13_55lxj")]
 position = Vector2(124, 180)
 
-[node name="Plant4" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant4" parent="Node" unique_id=516805271 instance=ExtResource("13_55lxj")]
 position = Vector2(305, 87)
 
-[node name="Plant5" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant5" parent="Node" unique_id=859900579 instance=ExtResource("13_55lxj")]
 position = Vector2(308, 242)
 
-[node name="Plant6" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant6" parent="Node" unique_id=477035405 instance=ExtResource("13_55lxj")]
 position = Vector2(85, 281)
 
-[node name="Plant7" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant7" parent="Node" unique_id=663019602 instance=ExtResource("13_55lxj")]
 position = Vector2(85, 281)
 
-[node name="Plant8" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant8" parent="Node" unique_id=1992309295 instance=ExtResource("13_55lxj")]
 position = Vector2(191, 288)
 
-[node name="Plant9" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant9" parent="Node" unique_id=1092305905 instance=ExtResource("13_55lxj")]
 position = Vector2(360, 291)
 
-[node name="Plant10" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant10" parent="Node" unique_id=1329430354 instance=ExtResource("13_55lxj")]
 position = Vector2(461, 301)
 
-[node name="Plant11" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant11" parent="Node" unique_id=1465603066 instance=ExtResource("13_55lxj")]
 position = Vector2(434, 301)
 
-[node name="Plant12" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant12" parent="Node" unique_id=1562490732 instance=ExtResource("13_55lxj")]
 position = Vector2(495, 301)
 
-[node name="Plant13" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant13" parent="Node" unique_id=889359556 instance=ExtResource("13_55lxj")]
 position = Vector2(494, 274)
 
-[node name="Plant14" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant14" parent="Node" unique_id=361729475 instance=ExtResource("13_55lxj")]
 position = Vector2(461, 273)
 
-[node name="Plant15" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant15" parent="Node" unique_id=585978877 instance=ExtResource("13_55lxj")]
 position = Vector2(432, 273)
 
-[node name="Plant16" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant16" parent="Node" unique_id=1382081266 instance=ExtResource("13_55lxj")]
 position = Vector2(494, 327)
 
-[node name="Plant17" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant17" parent="Node" unique_id=386408373 instance=ExtResource("13_55lxj")]
 position = Vector2(461, 326)
 
-[node name="Plant18" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant18" parent="Node" unique_id=470999167 instance=ExtResource("13_55lxj")]
 position = Vector2(432, 326)
 
-[node name="Plant19" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant19" parent="Node" unique_id=781166703 instance=ExtResource("13_55lxj")]
 position = Vector2(433, 346)
 
-[node name="Plant20" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant20" parent="Node" unique_id=1304177065 instance=ExtResource("13_55lxj")]
 position = Vector2(461, 346)
 
-[node name="Plant21" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant21" parent="Node" unique_id=819580504 instance=ExtResource("13_55lxj")]
 position = Vector2(492, 346)
 
-[node name="Plant22" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant22" parent="Node" unique_id=1894826461 instance=ExtResource("13_55lxj")]
 position = Vector2(493, 247)
 
-[node name="Plant23" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant23" parent="Node" unique_id=478699456 instance=ExtResource("13_55lxj")]
 position = Vector2(461, 242)
 
-[node name="Plant24" parent="Node" instance=ExtResource("13_55lxj")]
+[node name="Plant24" parent="Node" unique_id=1169715624 instance=ExtResource("13_55lxj")]
 position = Vector2(426, 243)
 
-[node name="TreasureChest" parent="." instance=ExtResource("14_n7k4n")]
+[node name="Plant25" parent="Node" unique_id=587458952 instance=ExtResource("13_55lxj")]
+position = Vector2(17, 52)
+
+[node name="Plant26" parent="Node" unique_id=1548121961 instance=ExtResource("13_55lxj")]
+position = Vector2(19, 80)
+
+[node name="Plant27" parent="Node" unique_id=1652930632 instance=ExtResource("13_55lxj")]
+position = Vector2(18, 108)
+
+[node name="Plant28" parent="Node" unique_id=240829838 instance=ExtResource("13_55lxj")]
+position = Vector2(17, 134)
+
+[node name="Plant29" parent="Node" unique_id=305214959 instance=ExtResource("13_55lxj")]
+position = Vector2(18, 309)
+
+[node name="Plant30" parent="Node" unique_id=1756387382 instance=ExtResource("13_55lxj")]
+position = Vector2(21, 342)
+
+[node name="Plant31" parent="Node" unique_id=340653800 instance=ExtResource("13_55lxj")]
+position = Vector2(49, 341)
+
+[node name="Plant32" parent="Node" unique_id=30149383 instance=ExtResource("13_55lxj")]
+position = Vector2(75, 310)
+
+[node name="Plant33" parent="Node" unique_id=404736697 instance=ExtResource("13_55lxj")]
+position = Vector2(53, 307)
+
+[node name="Plant34" parent="Node" unique_id=496985560 instance=ExtResource("13_55lxj")]
+position = Vector2(103, 312)
+
+[node name="Plant35" parent="Node" unique_id=1558674665 instance=ExtResource("13_55lxj")]
+position = Vector2(84, 344)
+
+[node name="Plant36" parent="Node" unique_id=430255620 instance=ExtResource("13_55lxj")]
+position = Vector2(108, 341)
+
+[node name="Plant37" parent="Node" unique_id=1865605127 instance=ExtResource("13_55lxj")]
+position = Vector2(120, 284)
+
+[node name="Plant38" parent="Node" unique_id=2134673462 instance=ExtResource("13_55lxj")]
+position = Vector2(151, 287)
+
+[node name="Plant39" parent="Node" unique_id=2081966920 instance=ExtResource("13_55lxj")]
+position = Vector2(139, 315)
+
+[node name="TreasureChest" parent="." unique_id=1775955843 instance=ExtResource("14_n7k4n")]
 z_index = 0
 position = Vector2(448, 303)
 item_data = ExtResource("15_ok2uc")
