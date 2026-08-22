@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dsg47015hlqlh"]
+
+[ext_resource type="Script" uid="uid://8626y4efhmym" path="res://quests/utility_nodes/quest_advance_trigger.gd" id="1_huhb0"]
+[ext_resource type="Texture2D" uid="uid://j3rk2scd0b11" path="res://quests/utility_nodes/icons/quest_advance.png" id="2_32f25"]
+
+[node name="QuestAdvanceTrigger" type="Node2D" unique_id=2131318670]
+script = ExtResource("1_huhb0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1174306910]
+z_index = 1
+position = Vector2(10, -16)
+texture = ExtResource("2_32f25")

@@ -5,10 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://drg7ek5ckeavx" path="res://Levels/music/example_music_03.ogg" id="2_uejuh"]
 [ext_resource type="PackedScene" uid="uid://f0v0b4vfqxnv" path="res://Tile Maps/dungeon_layer.tscn" id="3_0vvle"]
 [ext_resource type="PackedScene" uid="uid://6c0u4322u5i5" path="res://Levels/level_transition.tscn" id="4_ux7ia"]
+[ext_resource type="PackedScene" uid="uid://dsg47015hlqlh" path="res://quests/utility_nodes/quest_advance_trigger.tscn" id="5_7snd3"]
+[ext_resource type="PackedScene" uid="uid://hntudp7xji7w" path="res://quests/utility_nodes/quest_activated_switch.tscn" id="5_jkwh1"]
 [ext_resource type="PackedScene" uid="uid://ddgvtax5h2ddp" path="res://interactables/dungeon/pressure_plate.tscn" id="5_swvnj"]
+[ext_resource type="Resource" uid="uid://bmdco1d5xgfma" path="res://quests/recover_lost_flute.tres" id="6_jkwh1"]
 [ext_resource type="PackedScene" uid="uid://bytosf43nk6um" path="res://interactables/dungeon/barred_door.tscn" id="6_m3xjo"]
 [ext_resource type="PackedScene" uid="uid://c3cqmldupwrj" path="res://interactables/dungeon/pushable_statue.tscn" id="7_4dhgi"]
-[ext_resource type="PackedScene" uid="uid://nsvcxvfdfhfq" path="res://Enemies/goblin/goblin.tscn" id="9_gxo4t"]
+[ext_resource type="PackedScene" uid="uid://brl3bdhkbtmkj" path="res://Enemies/Slime/Slime.tscn" id="9_0vvle"]
 [ext_resource type="PackedScene" uid="uid://0g7hxyqxtr34" path="res://Props/pot/Pot.tscn" id="10_sha80"]
 [ext_resource type="Script" uid="uid://f12ojv2igy5y" path="res://Enemies/Scripts/drop_data.gd" id="11_gmq4b"]
 [ext_resource type="Resource" uid="uid://b5fmi6kp1vk5u" path="res://Items/apple.tres" id="12_0vvle"]
@@ -49,18 +52,39 @@ target_transition_area = "LevelTransition2"
 center_player = true
 side = 3
 
+[node name="QuestActivatedSwitch" parent="LevelTransition2" unique_id=86243811 instance=ExtResource("5_jkwh1")]
+check_type = 1
+remove_when_activated = true
+free_on_remove = true
+react_to_global_signal = true
+linked_quest = ExtResource("6_jkwh1")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+QUEST: Recover Lost Magical Flute
+Checking if player has completed step: find the cave entrance"
+
+[node name="QuestAdvanceTrigger" parent="LevelTransition2/QuestActivatedSwitch" unique_id=2131318670 instance=ExtResource("5_7snd3")]
+linked_quest = ExtResource("6_jkwh1")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+QUEST: Recover Lost Magical Flute
+Step: 1 - find the cave entrance
+Complete: false"
+
 [node name="PlayerSpawn" parent="." unique_id=1495375934 instance=ExtResource("2_2la2r")]
 position = Vector2(287, 131)
 
 [node name="PressurePlate" parent="." unique_id=2139431696 instance=ExtResource("5_swvnj")]
-position = Vector2(343, 121)
+position = Vector2(368, 128)
 
 [node name="BarredDoor" parent="." unique_id=457324411 instance=ExtResource("6_m3xjo")]
 position = Vector2(224, 56)
 
 [node name="PushableStatue" parent="." unique_id=1860789847 instance=ExtResource("7_4dhgi")]
 z_index = 2
-position = Vector2(193, 223)
+position = Vector2(190, 229)
+persistent = true
+persistent_location = Vector2(367, 130)
 
 [node name="LevelTransition" parent="." unique_id=1793548038 instance=ExtResource("4_ux7ia")]
 position = Vector2(256, 48)
@@ -70,13 +94,14 @@ side = 2
 
 [node name="enemies" type="Node" parent="." unique_id=1927456601]
 
-[node name="Goplin" parent="enemies" unique_id=652033049 instance=ExtResource("9_gxo4t")]
-z_index = 2
-position = Vector2(170, 174)
+[node name="Slime" parent="enemies" unique_id=128857968 instance=ExtResource("9_0vvle")]
+position = Vector2(163, 157)
 
-[node name="Goplin2" parent="enemies" unique_id=693212291 instance=ExtResource("9_gxo4t")]
-z_index = 2
-position = Vector2(402, 176)
+[node name="Slime3" parent="enemies" unique_id=717381532 instance=ExtResource("9_0vvle")]
+position = Vector2(295, 177)
+
+[node name="Slime2" parent="enemies" unique_id=245681079 instance=ExtResource("9_0vvle")]
+position = Vector2(207, 108)
 
 [node name="props" type="Node" parent="." unique_id=1300631538]
 
@@ -92,5 +117,6 @@ drops = Array[ExtResource("11_gmq4b")]([SubResource("Resource_7snd3")])
 position = Vector2(113, 83)
 drops = Array[ExtResource("11_gmq4b")]([SubResource("Resource_jkwh1")])
 
+[connection signal="entered_from_here" from="LevelTransition2" to="LevelTransition2/QuestActivatedSwitch/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
 [connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]

@@ -26,12 +26,6 @@ tile_map_data = PackedByteArray("AAD9//3/AAAAAAMAAAD9//7/AAACAAQAAAD9////AAACAAU
 [node name="PlayerSpawn" parent="." unique_id=1762681044 instance=ExtResource("3_ye5qq")]
 position = Vector2(271, 190)
 
-[node name="LevelTransition2" parent="." unique_id=341318284 instance=ExtResource("5_ye5qq")]
-position = Vector2(256, -96)
-level = "uid://bxlye8p7xslin"
-size = 4
-side = 2
-
 [node name="LevelTransition" parent="." unique_id=225551133 instance=ExtResource("5_ye5qq")]
 position = Vector2(-96, 224)
 level = "uid://qn3qcjl3ax0o"
@@ -58,7 +52,7 @@ npc_resource = ExtResource("13_n7k4n")
 
 [node name="DialogText" type="Node" parent="NPC/DialogInteraction" unique_id=1474947744]
 script = ExtResource("11_q54cq")
-text = "You're heading south? The dungeon is that way..."
+text = "You're heading north? The dungeon is that way..."
 npc_info = ExtResource("13_n7k4n")
 metadata/_custom_type_script = "uid://dpayt7gktjt8s"
 
@@ -214,3 +208,10 @@ z_index = 0
 position = Vector2(448, 303)
 item_data = ExtResource("15_ok2uc")
 quantity = 2
+
+[node name="LevelTransition2" parent="." unique_id=280759436 instance=ExtResource("5_ye5qq")]
+position = Vector2(256, -96)
+level = "uid://bxlye8p7xslin"
+center_player = true
+size = 4
+side = 2

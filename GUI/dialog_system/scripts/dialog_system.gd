@@ -144,6 +144,7 @@ func set_dialog_choice( _d : DialogChoice ) -> void:
 
 func _dialog_choice_selected( _d : DialogBranch ) -> void:
 	choice_options.visible = false
+	_d.selected.emit()
 	show_dialog( _d.dialog_items )
 	pass
 
@@ -176,10 +177,11 @@ func show_dialog_button_indicator( _is_visible : bool ) -> void:
 func start_timer() -> void:
 	timer.wait_time = text_speed
 	#Manipulate wait_time
-	var _char = plain_text[ content.visible_characters -1 ]
-	if '.!?:;'.contains( _char ):
-		timer.wait_time *= 4
-	elif ', '.contains( _char ):
-		timer.wait_time *= 2
+	if content.visible_characters > 0:
+		var _char = plain_text[ content.visible_characters -1 ]
+		if '.!?:;'.contains( _char ):
+			timer.wait_time *= 4
+		elif ', '.contains( _char ):
+			timer.wait_time *= 2
 	timer.start()
 	pass

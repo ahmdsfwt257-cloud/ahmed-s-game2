@@ -1,6 +1,7 @@
 @tool
 class_name ItemDropper extends Node2D
 
+signal drop_collected
 const PICKUP = preload( "res://Items/item_pickup/item_pickup.tscn" )
 
 @export var item_data : ItemData : set = _set_item_data
@@ -29,14 +30,16 @@ func drop_item() -> void:
 	has_dropped = true
 	
 	var drop = PICKUP.instantiate() as ItemPickup
+	get_tree().current_scene.add_child( drop )
 	drop.item_data = item_data
-	add_child.call_deferred( drop )
+	drop.global_position = global_position
 	drop.picked_up.connect( _on_drop_pickup )
 	audio.play()
 
 
 
 func _on_drop_pickup() -> void:
+	drop_collected.emit()
 	has_dropped_data.set_value()
 
  

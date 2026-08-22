@@ -20,6 +20,10 @@ func get_value() -> void:
 	pass
 
 
+func remove_value() -> void:
+	SaveManager.remove_persistent_value( _get_name() )
+	pass
+
+
 func _get_name() -> String:
-	# "res://levels/area01/01.tscn/treasurechest/Pers"
 	return get_tree().current_scene.scene_file_path + "/" + get_parent().name + "/" + name

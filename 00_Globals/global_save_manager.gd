@@ -8,7 +8,7 @@ signal game_saved
 
 
 var current_save : Dictionary = {
-	secne_path = "",
+	scene_path = "",
 	player = {
 		hp = 1,
 		max_hp = 1,
@@ -27,8 +27,9 @@ var current_save : Dictionary = {
 
 func save_game() -> void:
 	update_player_data()
-	update_secne_path()
+	update_scene_path()
 	update_item_data()
+	update_quest_data()
 	var file := FileAccess.open( SAVE_PATH + "save.sav", FileAccess.WRITE )
 	var save_json = JSON.stringify( current_save )
 	file.store_line( save_json )
@@ -56,6 +57,7 @@ func load_game() -> void:
 	PlayerManager.set_health( current_save.player.hp, current_save.player.max_hp )
 	PlayerManager.INVENTORY_DATA.parse_save_data( current_save.items )
 	
+	QuestManager.current_quests = current_save.quests
 	await LevelManager.level_loaded
 	
 	game_loaded.emit()
@@ -71,7 +73,7 @@ func update_player_data() -> void:
 	current_save.player.pos_y = p.global_position.y
 
 
-func update_secne_path() -> void:
+func update_scene_path() -> void:
 	var p : String = ""
 	for c in get_tree().root.get_children():
 		if c is Level:
@@ -79,14 +81,29 @@ func update_secne_path() -> void:
 	current_save.scene_path = p
 
 
+
 func update_item_data() -> void:
 	current_save.items = PlayerManager.INVENTORY_DATA.get_save_data()
+
+
+
+func update_quest_data() -> void:
+	current_save.quests = QuestManager.current_quests
+
 
 
 func add_persistent_value( value : String ) -> void:
 	if check_persistent_value( value ) == false:
 		current_save.persistence.append( value )
 	pass
+
+
+
+func remove_persistent_value( value : String ) -> void:
+	var p = current_save.persistence as Array
+	p.erase( value )
+	pass
+
 
 
 func check_persistent_value( value : String ) -> bool:

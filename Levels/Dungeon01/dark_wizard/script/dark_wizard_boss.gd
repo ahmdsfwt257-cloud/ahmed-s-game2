@@ -42,6 +42,7 @@ func _ready() -> void:
 		queue_free()
 		return
 	
+	door_block.enabled = true
 	hp = max_hp
 	PlayerHud.show_boss_health( "Dark Wizard" )
 	hit_box.Damaged.connect( damage_taken )
@@ -200,16 +201,21 @@ func defeat() -> void:
 	animation_player.play("destroy")
 	enable_hit_boxes( false )
 	PlayerHud.hide_boss_health()
-	persistent_data_handler.set_value()
+	#persistent_data_handler.set_value()
+	
 	_trigger_enemy_counter()
 	await animation_player.animation_finished
+	$ItemDropper.drop_item()
+	$ItemDropper.drop_collected.connect( open_dungeon )
+
+
+func open_dungeon() -> void:
+	persistent_data_handler.set_value()
 	door_block.enabled = false
-
-
 
 func enable_hit_boxes( _v : bool = true ) -> void:
 	hit_box.set_deferred("monitorable", _v)
-	hurt_box.set_deferred("monotoring", _v )
+	hurt_box.set_deferred("monitoring", _v )
 
 
 func explosion( _p : Vector2 = Vector2.ZERO ) -> void:

@@ -45,7 +45,7 @@ func check_is_activated() -> void:
 	elif bodies <= 0 and is_active == true:
 		is_active = false
 		sprite.region_rect.position.x = off_rect.position.x
-		play_audio( audio_deactivate )
+		play_audio( audio_deactivate  )
 		deactivated.emit()
 
 

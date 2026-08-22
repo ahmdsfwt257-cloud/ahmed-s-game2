@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://oyml7atop3jh"]
+
+[ext_resource type="Script" uid="uid://bqr1t64vvlbpy" path="res://quests/scripts/quest_reward_item.gd" id="1_7qkai"]
+[ext_resource type="Resource" uid="uid://s0jf8diicaqg" path="res://Items/gem.tres" id="2_djsxx"]
+[ext_resource type="Script" uid="uid://dcvkrsfc2eu8x" path="res://quests/scripts/quest_resource.gd" id="3_0eodp"]
+
+[sub_resource type="Resource" id="Resource_nyyj2"]
+script = ExtResource("1_7qkai")
+item = ExtResource("2_djsxx")
+quantity = 20
+metadata/_custom_type_script = "uid://bqr1t64vvlbpy"
+
+[resource]
+script = ExtResource("3_0eodp")
+title = "Get Rid Of All The Slimes!"
+description = "Get Rid Of All The Slimes Before They Reach The Villager's Garden!"
+steps = Array[String](["Get Rid Of All The Slime."])
+reward_xp = 50
+reward_items = Array[ExtResource("1_7qkai")]([SubResource("Resource_nyyj2")])
+react_to_global_signal = true
+metadata/_custom_type_script = "uid://dcvkrsfc2eu8x"
